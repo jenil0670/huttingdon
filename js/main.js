@@ -332,7 +332,7 @@ function initForms() {
       const originalText = submitBtn ? submitBtn.innerHTML : 'Submit';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Submitting to Supabase...';
+        submitBtn.innerHTML = 'Submitting...';
       }
 
       // Extract form data
@@ -406,7 +406,7 @@ function initForms() {
       const originalText = submitBtn ? submitBtn.innerHTML : 'Submit';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Submitting Application...';
+        submitBtn.innerHTML = 'Submitting...';
       }
 
       // Extract form data
