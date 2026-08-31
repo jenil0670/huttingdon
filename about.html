@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>About Huttingdon — India Influencer Marketing for Tech &amp; SaaS</title>
+  <meta name="description" content="Learn how Huttingdon helps international technology, AI and SaaS companies reach Indian audiences through strategic creator partnerships."/>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "dark-base": "#090909",
+            "dark-surface": "#131313",
+            "light-base": "#ffffff",
+            "light-surface": "#f7f7f8"
+          },
+          fontFamily: {
+            sans: ["'Plus Jakarta Sans'", "-apple-system", "sans-serif"],
+            serif: ["'Playfair Display'", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-[#090909] text-white selection:bg-white selection:text-black">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Frosted Glass Floating Navbar -->
+  <div class="navbar-frosted-container">
+    <header class="navbar-frosted flex justify-between items-center">
+      <!-- Animated Logo Branding on the Left -->
+      <a href="index.html" class="flex items-center group"><div class="logo-animated flex items-center justify-center"><img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-8 md:h-10 w-auto object-contain"/></div></a>
+
+      <nav class="hidden md:flex items-center space-x-1">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="creators.html" class="nav-link">For Creators</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <button data-open-modal="consultation-modal" class="btn-pill-dark text-xs py-2 px-5">
+          Start India Campaign
+        </button>
+      </div>
+
+      <button data-action="toggle-mobile-menu" class="md:hidden text-white p-1" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay md:hidden">
+    <div class="flex justify-between items-center border-b border-white/10 pb-6">
+      <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain"/></div>
+      <button id="close-mobile-nav" class="text-white p-2" aria-label="Close Menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col space-y-7 my-auto">
+      <a href="index.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Home</a>
+      <a href="work.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Work</a>
+      <a href="creators.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">For Creators</a>
+      <a href="about.html" class="text-3xl font-medium text-white">About</a>
+      <a href="contact.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Contact</a>
+    </div>
+    <div class="flex flex-col gap-3 pt-6 border-t border-white/10">
+      <button data-open-modal="consultation-modal" class="btn-pill-dark w-full justify-center">Start India Campaign</button>
+      <a href="creators.html" class="btn-pill-glass w-full justify-center text-center">Join Creator Network</a>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- =========================================
+         SECTION 1: HERO (BLACK BACKGROUND)
+         ========================================= -->
+    <section class="section-dark pt-24 md:pt-36 pb-28 md:pb-40">
+      <div class="max-w-[1100px] mx-auto px-6 md:px-12 text-center space-y-8 reveal">
+        
+        <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Our Purpose</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.12] text-white">
+          We connect global technology with <br/>
+          <span class="italic">Indian influence.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl text-[#999999] font-light max-w-2xl mx-auto leading-relaxed">
+          Huttingdon exists for one reason: to make India easier to reach for international technology companies through creator-led growth.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: MISSION & PHILOSOPHY (WHITE BACKGROUND - CURVY SLIDE)
+         ========================================= -->
+    <section class="section-light py-28 md:py-36">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-6 space-y-6 reveal">
+            <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
+              <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Our Positioning</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909] leading-tight">
+              Beyond vanity metrics. <br/>
+              <span class="italic text-[#666666]">Built on authentic trust.</span>
+            </h2>
+
+            <p class="text-base text-[#555555] font-light leading-relaxed">
+              India has an enormous technology audience and a creator ecosystem capable of shaping product discovery, opinions, and adoption.
+            </p>
+
+            <p class="text-base text-[#555555] font-light leading-relaxed">
+              Finding the right creators, understanding the audience, and building a campaign that actually supports a business objective can be challenging from another country. That is where we come in.
+            </p>
+
+            <p class="text-base text-[#555555] font-light leading-relaxed">
+              We do not believe influencer marketing is simply getting someone to publish a post. It is finding the right person to tell the right story to the right audience at the right moment.
+            </p>
+          </div>
+
+          <div class="lg:col-span-6 space-y-6 reveal reveal-delay-1">
+            <div class="card-light p-8 md:p-10 space-y-3">
+              <span class="text-xs font-semibold text-[#888888] uppercase tracking-wider block">MISSION</span>
+              <h3 class="font-serif text-2xl text-[#090909]">Make India Accessible</h3>
+              <p class="text-sm text-[#555555] font-light leading-relaxed">
+                Make the Indian technology market more accessible to global AI, SaaS, and digital products through structured, creator-led growth channels.
+              </p>
+            </div>
+
+            <div class="card-light p-8 md:p-10 space-y-3">
+              <span class="text-xs font-semibold text-[#888888] uppercase tracking-wider block">VISION</span>
+              <h3 class="font-serif text-2xl text-[#090909]">The Trusted Gateway</h3>
+              <p class="text-sm text-[#555555] font-light leading-relaxed">
+                Become the most trusted India-focused influencer marketing partner for international technology companies across North America, Europe, and Asia-Pacific.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: WHAT DIFFERENTIATES US (BLACK BACKGROUND - CURVED)
+         ========================================= -->
+    <section class="section-dark-curved py-28 md:py-36">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2 mb-4">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Our Differentiator</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white">
+            Not another generic influencer agency.
+          </h2>
+          <p class="text-base text-[#999999] font-light mt-3">
+            Traditional influencer agencies start with a generic list of influencers. We start with your business objective.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="card-dark p-8 space-y-3 reveal">
+            <span class="text-xs font-mono text-[#888888] block">01 // DOMAIN</span>
+            <h3 class="font-serif text-xl text-white">Technology First</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              We understand tech, AI architectures, SaaS metrics, developer tools, and digital product lifecycles.
+            </p>
+          </div>
+
+          <div class="card-dark p-8 space-y-3 reveal reveal-delay-1">
+            <span class="text-xs font-mono text-[#888888] block">02 // GEOGRAPHY</span>
+            <h3 class="font-serif text-xl text-white">India Focused</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              We are hyper-focused on Indian audiences, creator communities, platforms, and native cultural trust signals.
+            </p>
+          </div>
+
+          <div class="card-dark p-8 space-y-3 reveal reveal-delay-2">
+            <span class="text-xs font-mono text-[#888888] block">03 // STRATEGY</span>
+            <h3 class="font-serif text-xl text-white">Trusted Influence</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              We treat creators as an authentic discovery and distribution channel rather than simple advertising banners.
+            </p>
+          </div>
+
+          <div class="card-dark p-8 space-y-3 reveal reveal-delay-3">
+            <span class="text-xs font-mono text-[#888888] block">04 // OUTCOME</span>
+            <h3 class="font-serif text-xl text-white">Performance Driven</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              We connect creator campaigns to clear commercial objectives: sign-ups, trials, installs, traffic, and conversions.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: FINAL CTA (WHITE BACKGROUND - CURVED)
+         ========================================= -->
+    <section class="section-light py-28 md:py-36 text-center">
+      <div class="max-w-[900px] mx-auto px-6 md:px-12 space-y-6 reveal">
+        
+        <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
+          <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Let's Connect</span>
+        </div>
+
+        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#090909] leading-tight">
+          Enter India through influence.
+        </h2>
+
+        <p class="text-base sm:text-lg text-[#555555] font-light max-w-xl mx-auto leading-relaxed">
+          Talk to our strategy team about reaching India's tech ecosystem with the right creators.
+        </p>
+
+        <div class="pt-4 flex justify-center">
+          <button data-open-modal="consultation-modal" class="btn-pill-light">
+            Start a Conversation
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimalist Black & White Footer -->
+  <footer class="bg-[#090909] text-white border-t border-white/5 pt-20 pb-12">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12">
+      
+      <div class="md:col-span-5 space-y-5">
+        <span class="font-semibold text-lg tracking-widest text-white uppercase block">
+          HUTTINGDON
+        </span>
+        <p class="text-sm text-[#888888] max-w-sm font-light leading-relaxed">
+          Huttingdon helps international tech, AI and SaaS companies reach Indian audiences through strategic influencer marketing campaigns with relevant Indian creators.
+        </p>
+        <div class="text-xs text-[#555555]">
+          India • United States • United Kingdom • Europe
+        </div>
+      </div>
+
+      <div class="md:col-span-3 md:col-start-7">
+        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Navigation</h5>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="index.html" class="text-[#888888] hover:text-white transition-colors">Home</a></li>
+          <li><a href="work.html" class="text-[#888888] hover:text-white transition-colors">Work &amp; Strategy</a></li>
+          <li><a href="creators.html" class="text-[#888888] hover:text-white transition-colors">For Creators (Join Network)</a></li>
+          <li><a href="about.html" class="text-white hover:text-white transition-colors">About Us</a></li>
+          <li><a href="contact.html" class="text-[#888888] hover:text-white transition-colors">Contact / Plan Campaign</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">The India Playbook</h5>
+        <p class="text-xs text-[#888888] mb-4 font-light leading-relaxed">
+          Receive quarterly intelligence on India's tech creator economy and market entry strategies.
+        </p>
+        <form class="newsletter-form flex gap-2">
+          <input required class="input-curvy-dark text-xs py-2.5" placeholder="work@company.com" type="email"/>
+          <button type="submit" class="btn-pill-dark text-xs py-2.5 px-4" aria-label="Subscribe">
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-[#555555]">
+      <p>© 2026 Huttingdon. All rights reserved.</p>
+      <p class="mt-4 md:mt-0 font-light">India Tech × Creator Marketing</p>
+    </div>
+  </footer>
+
+  <!-- Modal: Consultation / Plan Campaign -->
+  <div id="consultation-modal" class="modal-overlay">
+    <div class="modal-container p-8 md:p-10">
+      <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs text-[#888888] uppercase tracking-wider font-medium">India Market Entry</span>
+          <h3 class="font-serif text-2xl text-white mt-1">Plan Your India Campaign</h3>
+        </div>
+        <button data-close-modal class="text-[#777777] hover:text-white p-1" aria-label="Close Dialog">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <form id="consultation-form" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Name *</label>
+            <input required type="text" class="input-curvy-dark text-xs" placeholder="Alex Morgan"/>
+          </div>
+          <div>
+            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Work Email *</label>
+            <input required type="email" class="input-curvy-dark text-xs" placeholder="alex@techproduct.com"/>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Company Website *</label>
+            <input required type="text" class="input-curvy-dark text-xs" placeholder="https://techproduct.com"/>
+          </div>
+          <div>
+            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Campaign Objective</label>
+            <select class="input-curvy-dark bg-[#161616] text-white text-xs">
+              <option value="awareness">Market Awareness in India</option>
+              <option value="traffic">Website &amp; Landing Page Traffic</option>
+              <option value="signups">User Sign-Ups &amp; Free Trials</option>
+              <option value="leads">B2B Lead Generation</option>
+              <option value="app_installs">App Installs</option>
+              <option value="launch">Product Launch / Market Entry</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="text-xs text-[#999999] block mb-1.5 font-medium">About Your Product &amp; Target Audience</label>
+          <textarea rows="3" class="input-curvy-dark text-xs" placeholder="Tell us about your product, target audience, and what you want to achieve in India..."></textarea>
+        </div>
+        <div class="pt-2 flex justify-end gap-3">
+          <button type="button" data-close-modal class="btn-pill-glass text-xs py-2 px-5">Cancel</button>
+          <button type="submit" class="btn-pill-dark text-xs py-2 px-6">Discuss My Campaign</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+

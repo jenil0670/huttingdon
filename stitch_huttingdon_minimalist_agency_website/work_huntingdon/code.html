@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HUNTINGDON - Work</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#131313",
+                        "on-tertiary-fixed-variant": "#3323cc",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#0f0069",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#393939",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-low": "#1b1c1c",
+                        "tertiary": "#c3c0ff",
+                        "tertiary-container": "#050040",
+                        "primary": "#c9c6c5",
+                        "inverse-primary": "#5f5e5e",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-container": "#0d0d0d",
+                        "on-secondary-container": "#b4b5b5",
+                        "inverse-on-surface": "#303030",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "surface-variant": "#353535",
+                        "surface-tint": "#c9c6c5",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary": "#2f3131",
+                        "secondary-container": "#454747",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-surface": "#e4e2e1",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#6b65ff",
+                        "on-primary-container": "#7c7a7a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-background": "#e4e2e1",
+                        "tertiary-fixed": "#e2dfff",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c7",
+                        "tertiary-fixed-dim": "#c3c0ff",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f2020",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#1d00a5",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-gap": "128px",
+                        "margin-mobile": "24px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Bodoni Moda"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg": ["80px", { lineHeight: "90px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md tracking-tighter text-on-surface" href="#">HUNTINGDON</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Work</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Creators</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">About</a>
+</div>
+<button class="hidden md:block bg-surface-container-high hover:bg-[#C5A059] text-on-surface hover:text-[#0D0D0D] transition-colors duration-300 font-label-caps text-label-caps px-6 py-3 rounded-none border border-outline-variant hover:border-transparent">
+                Join Network
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-section-gap">
+<!-- Header Section -->
+<header class="mb-24 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8">
+<h1 class="font-display-lg text-display-lg mb-6">Impact isn't a matter of opinion.<br/>Our work proves it.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Huntingdon is the world's premier influencer marketing agency. Grossing $500M+ in campaign revenue. Partner of choice for elite fashion houses and tech innovators.
+                </p>
+</div>
+<div class="md:col-span-4 flex flex-col justify-end items-start md:items-end mt-8 md:mt-0">
+<div class="flex flex-wrap gap-4 justify-start md:justify-end w-full">
+<button class="bg-[#262626] text-[#F5F5F5] font-label-caps text-label-caps px-4 py-2 rounded-none hover:bg-surface-bright transition-colors uppercase border border-transparent">All</button>
+<button class="bg-transparent text-on-surface-variant border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded-none hover:text-on-surface transition-colors uppercase">Fashion</button>
+<button class="bg-transparent text-on-surface-variant border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded-none hover:text-on-surface transition-colors uppercase">Technology</button>
+<button class="bg-transparent text-on-surface-variant border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded-none hover:text-on-surface transition-colors uppercase">Lifestyle</button>
+</div>
+</div>
+</header>
+<!-- Stats Marquee Placeholder (Static for minimal design) -->
+<div class="border-y border-outline-variant py-8 mb-24 overflow-hidden">
+<div class="flex whitespace-nowrap gap-12 font-headline-md text-headline-md text-on-surface-variant opacity-50">
+<span>$2.5+ Billion Generated</span>
+<span class="text-on-surface">•</span>
+<span>Premier Partners</span>
+<span class="text-on-surface">•</span>
+<span>Fortune 500 Trusted</span>
+<span class="text-on-surface">•</span>
+<span>Global Reach</span>
+</div>
+</div>
+<!-- Work Grid (Bento/Asymmetric) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Case 1 (Large) -->
+<article class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden mb-6 bg-surface-container-high h-[600px] border border-[#262626]">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A high-end fashion editorial shot featuring a model in architectural, avant-garde clothing walking down a minimalist urban street. The lighting is dramatic and cinematic, emphasizing deep shadows and sharp contrast. The color palette is muted with deep charcoal and striking white, embodying a quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIjQmKng8pVIG75fqUF5SNRLW8fWbtEnb35eLHzo0u2R1WK-JDuo_agRAomWKS5_C_pzFpuK2W95_CmoFjXHfjJHZC_u04cmOsLvqdt6wWWkkkjG0cxv_n5_me7rCJVWQLWEQyJtWwn7QUP9hBonBoH1UNCIbYiRxHFVXV4goorWaHWQ69MZugCkNa-tlydZ4jfrzzEkmBRAkzAKs8R7dZynfbuPNOB8PfDYNaQLEFzL_dCCv3FkRe"/>
+<div class="absolute top-6 left-6 bg-[#262626] text-[#F5F5F5] font-label-caps text-label-caps px-3 py-1 rounded-none uppercase">Fashion</div>
+</div>
+<div class="flex justify-between items-end border-b border-[#262626] pb-4">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Maison Margiela</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The 'Artisanal' Digital Campaign</p>
+</div>
+<div class="text-right">
+<span class="block font-headline-md text-headline-md text-[#C5A059]">450%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">ROI Increase</span>
+</div>
+</div>
+</article>
+<!-- Case 2 (Small) -->
+<article class="md:col-span-4 group cursor-pointer mt-12 md:mt-0">
+<div class="relative overflow-hidden mb-6 bg-surface-container-high h-[400px] md:h-[600px] border border-[#262626]">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, minimalist product shot of a cutting-edge smartphone hovering in a stark, futuristic dark room. Soft, diffused lighting highlights the phone's metallic edges. The background is a gradient of deep blacks and dark grays, creating an atmosphere of exclusive technology and sophisticated design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKvMDfHZiL-wmPOB2RQkhWw6fnh2bKXKFB3oYNit-c0OF4KlC5rD5CHj50Z-cXUTmAPCABk0MXMSPagEML0kv0jrbNGpmZMvWZcMtAd8FNb9QPQDNW9wn2PcXPzRGFoAkXt2crszmPf31mnIOZwQV_rySOWKMwrZNu7yO16A_GbRCuM6VSAfSXli6UfcX3606LlCoAh2GaSuHjb7MaqMPx24xWyZaqicoAlsFN6uMrA3oGM05zK4vL"/>
+<div class="absolute top-6 left-6 bg-[#262626] text-[#F5F5F5] font-label-caps text-label-caps px-3 py-1 rounded-none uppercase">Technology</div>
+</div>
+<div class="flex justify-between items-end border-b border-[#262626] pb-4">
+<div>
+<h3 class="font-headline-md text-headline-md md:text-[24px] mb-2">Aura Tech</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Launch Strategy</p>
+</div>
+<div class="text-right">
+<span class="block font-headline-md text-headline-md md:text-[24px] text-[#C5A059]">2.1M</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Impressions</span>
+</div>
+</div>
+</article>
+<!-- Case 3 (Small) -->
+<article class="md:col-span-4 group cursor-pointer mt-12 md:mt-16">
+<div class="relative overflow-hidden mb-6 bg-surface-container-high h-[450px] border border-[#262626]">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="An elegant, minimalist still life of a luxury skincare product placed on a rough-hewn slate stone. The lighting is soft and moody, casting long, deliberate shadows. The scene is composed with generous negative space, conveying a sense of serenity, premium quality, and refined beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQMwQ3Ay1Yln2urTEj-_x5_wmH9qwWogXsydmeZSuA08g0GTc4UN9H12whNUTdc5ZJuzoAOUResoaBx2PSxrSSFtlIRU1aR9r-IyoqmoUxYpT9qRaSwqT4d3aS9KJMhfO7NXT4swx0dHSa_f-w0jkXra_Xpj1mBLYJbp47kWQbqPD5xCeqg52Rw_9700qvqJZTQnVTLyCCeJ_CG8FrLeeREluq06EzxPlbWgH-gEOamY4Cc-JZttA"/>
+<div class="absolute top-6 left-6 bg-[#262626] text-[#F5F5F5] font-label-caps text-label-caps px-3 py-1 rounded-none uppercase">Lifestyle</div>
+</div>
+<div class="flex justify-between items-end border-b border-[#262626] pb-4">
+<div>
+<h3 class="font-headline-md text-headline-md md:text-[24px] mb-2">L'Essence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rebrand Activation</p>
+</div>
+</div>
+</article>
+<!-- Case 4 (Large, Offset) -->
+<article class="md:col-span-8 group cursor-pointer mt-12 md:mt-32">
+<div class="relative overflow-hidden mb-6 bg-surface-container-high h-[500px] border border-[#262626]">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A dynamic, high-contrast black and white photograph of an elite athlete in motion against a stark, modern architectural backdrop. The composition is sharp and angular, emphasizing power and precision. The overall aesthetic is raw, premium, and intensely focused, reflecting a luxury sportswear campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4GleoF-gAJPII89gnGqGRtt9EGutkQknOoCFb2pELueKlJoLomp6KT8WEMnOErFTztCECl3eZQqEyeoV2afqqjo2LXTphjdG1UuTex8LgzgQRZsux4clKcj1dk_F4Mxd8JVlIk90-JqKpNLzeV0gvHDJGs3CtRJ4_xiC_Kn4kR1B3f6z2gREiE6uF9FWUz9Dq3zSOIDM2o0vowo4nzGrxC_fMuq8nIEX6zP56_H88nCsNciNqTvu"/>
+<div class="absolute top-6 left-6 bg-[#262626] text-[#F5F5F5] font-label-caps text-label-caps px-3 py-1 rounded-none uppercase">Fashion</div>
+</div>
+<div class="flex justify-between items-end border-b border-[#262626] pb-4">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Vanguard Athletics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance Series</p>
+</div>
+<div class="text-right">
+<span class="block font-headline-md text-headline-md text-[#C5A059]">68%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Conversion Rate</span>
+</div>
+</div>
+</article>
+</section>
+<!-- CTA Section -->
+<section class="mt-section-gap pt-24 border-t border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-[64px] leading-tight mb-8 md:mb-0 max-w-xl">
+                Ready to create impact?
+            </h2>
+<button class="bg-[#4F46E5] text-white font-label-caps text-label-caps px-8 py-4 rounded-none hover:bg-opacity-90 transition-colors uppercase tracking-widest">
+                Book a Consultation
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width mt-section-gap border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md text-on-surface mb-4">HUNTINGDON</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Elevating brand narratives through curated influencer partnerships and elite digital strategy.
+                </p>
+</div>
+<div class="md:col-span-2 grid grid-cols-2 gap-8">
+<div class="flex flex-col space-y-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Press</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Careers</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Contact</a>
+</div>
+</div>
+<div class="md:col-span-1 flex flex-col justify-end items-start md:items-end mt-8 md:mt-0">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    © 2024 Huntingdon Influencer Marketing Agency. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

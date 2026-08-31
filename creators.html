@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Join the Huttingdon Creator Network — Indian Tech, AI &amp; SaaS Creators</title>
+  <meta name="description" content="Join Huttingdon's curated creator network. Partner with international AI, SaaS, developer tools and technology brands looking to reach Indian audiences."/>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "dark-base": "#090909",
+            "dark-surface": "#131313",
+            "light-base": "#ffffff",
+            "light-surface": "#f7f7f8"
+          },
+          fontFamily: {
+            sans: ["'Plus Jakarta Sans'", "-apple-system", "sans-serif"],
+            serif: ["'Playfair Display'", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-[#090909] text-white selection:bg-white selection:text-black">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Frosted Glass Floating Navbar -->
+  <div class="navbar-frosted-container">
+    <header class="navbar-frosted flex justify-between items-center">
+      <!-- Animated Logo Branding on the Left -->
+      <a href="index.html" class="flex items-center group"><div class="logo-animated flex items-center justify-center"><img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-8 md:h-10 w-auto object-contain"/></div></a>
+
+      <nav class="hidden md:flex items-center space-x-1">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="creators.html" class="nav-link active">For Creators</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a href="#creator-form" class="btn-pill-dark text-xs py-2 px-5">
+          Join Network
+        </a>
+      </div>
+
+      <button data-action="toggle-mobile-menu" class="md:hidden text-white p-1" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay md:hidden">
+    <div class="flex justify-between items-center border-b border-white/10 pb-6">
+      <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain"/></div>
+      <button id="close-mobile-nav" class="text-white p-2" aria-label="Close Menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col space-y-7 my-auto">
+      <a href="index.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Home</a>
+      <a href="work.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Work</a>
+      <a href="creators.html" class="text-3xl font-medium text-white">For Creators</a>
+      <a href="about.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">About</a>
+      <a href="contact.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Contact</a>
+    </div>
+    <div class="flex flex-col gap-3 pt-6 border-t border-white/10">
+      <a href="#creator-form" class="btn-pill-dark w-full justify-center text-center">Join Creator Network</a>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- =========================================
+         SECTION 1: HERO (BLACK BACKGROUND)
+         ========================================= -->
+    <section class="section-dark pt-24 md:pt-36 pb-28 md:pb-40">
+      <div class="max-w-[1100px] mx-auto px-6 md:px-12 text-center space-y-8 reveal">
+        
+        <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Creator Onboarding</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.12] text-white">
+          Partner with global tech brands <br/>
+          <span class="italic">looking to reach India.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl text-[#999999] font-light max-w-2xl mx-auto leading-relaxed">
+          If you create content in tech, artificial intelligence, software development, SaaS, productivity, coding, or startups, Huttingdon connects you with international brands entering the Indian market.
+        </p>
+
+        <div class="pt-2 flex justify-center">
+          <a href="#creator-form" class="btn-pill-dark">
+            Apply to Join the Network
+            <span class="material-symbols-outlined text-base">arrow_downward</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: WHY JOIN (WHITE BACKGROUND - CURVY SLIDE)
+         ========================================= -->
+    <section class="section-light py-28 md:py-36">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2 mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
+            <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Why Join Huttingdon</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909]">
+            Built around creator respect and relevant brand fit.
+          </h2>
+          <p class="text-base text-[#555555] font-light mt-3">
+            We don't send generic blast emails. We match you with products that genuinely make sense for your audience.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="card-light p-8 space-y-3 reveal">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">public</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Global Tech Brands</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              Work with verified US, UK, and European AI startups, SaaS tools, and developer platforms expanding into India.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3 reveal reveal-delay-1">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">verified</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Audience-First Matching</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              No irrelevant sponsorships. We only bring opportunities that add real value to the community you have built.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3 reveal reveal-delay-2">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">payments</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Transparent Terms</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              Clear deliverables, professional briefs, fair compensation, and prompt payment processing on every engagement.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3 reveal">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Creative Autonomy</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              You know your audience best. We advocate for creator-native storytelling over rigid corporate scripts.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3 reveal reveal-delay-1">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">repeat</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Ongoing Programs</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              Perform well on a campaign and unlock recurring creator partnerships and long-term brand ambassador opportunities.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3 reveal reveal-delay-2">
+            <div class="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center text-[#090909]">
+              <span class="material-symbols-outlined text-xl">support_agent</span>
+            </div>
+            <h3 class="font-serif text-xl text-[#090909]">Dedicated Coordination</h3>
+            <p class="text-sm text-[#555555] font-light leading-relaxed">
+              Our team manages international brand communication, time zone differences, and logistics smoothly.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: CREATOR CATEGORIES (BLACK BACKGROUND - CURVED)
+         ========================================= -->
+    <section class="section-dark-curved py-28 md:py-36">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2 mb-4">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Who We Work With</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white">
+            Indian creators across the technology ecosystem.
+          </h2>
+          <p class="text-base text-[#999999] font-light mt-3">
+            Micro-, mid-tier, and specialized niche creators with credible audiences.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 text-center">
+          
+          <div class="card-dark p-6 rounded-2xl reveal">
+            <span class="text-sm font-medium text-white block">AI &amp; Machine Learning</span>
+            <span class="text-xs text-[#777777] mt-1 block">Researchers, Educators, Builders</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-1">
+            <span class="text-sm font-medium text-white block">Software Developers</span>
+            <span class="text-xs text-[#777777] mt-1 block">Full Stack, DevOps, Frontend</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-2">
+            <span class="text-sm font-medium text-white block">Coding Educators</span>
+            <span class="text-xs text-[#777777] mt-1 block">YouTube, Tutorials, Bootcampers</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal">
+            <span class="text-sm font-medium text-white block">SaaS &amp; Business Tools</span>
+            <span class="text-xs text-[#777777] mt-1 block">Productivity, MarTech, Operations</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-1">
+            <span class="text-sm font-medium text-white block">Tech YouTubers</span>
+            <span class="text-xs text-[#777777] mt-1 block">Hardware, Gadgets, Digital Life</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-2">
+            <span class="text-sm font-medium text-white block">Startup &amp; Founders</span>
+            <span class="text-xs text-[#777777] mt-1 block">Entrepreneurship, Build in Public</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal">
+            <span class="text-sm font-medium text-white block">Productivity &amp; Career</span>
+            <span class="text-xs text-[#777777] mt-1 block">Workflow, Study, Career Growth</span>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-1">
+            <span class="text-sm font-medium text-white block">Tech Community Leaders</span>
+            <span class="text-xs text-[#777777] mt-1 block">Discord, Newsletters, X Creators</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: CREATOR APPLICATION FORM (WHITE BACKGROUND - CURVED)
+         ========================================= -->
+    <section id="creator-form" class="section-light py-28 md:py-36">
+      <div class="max-w-[900px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center space-y-4 mb-12 reveal">
+          <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
+            <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Application Form</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909]">
+            Apply to Join the Creator Network
+          </h2>
+          <p class="text-sm md:text-base text-[#555555] font-light max-w-lg mx-auto">
+            Fill in your channel details below. Our creator partnership team will review your profile and reach out when relevant campaigns align with your audience.
+          </p>
+        </div>
+
+        <!-- Creator Registration Form -->
+        <div class="card-light p-8 md:p-12 rounded-[36px] shadow-lg reveal reveal-delay-1">
+          <form id="creator-app-form" class="space-y-5">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Your Full Name *</label>
+                <input required type="text" class="input-curvy-light text-xs" placeholder="e.g. Rohan Sharma"/>
+              </div>
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Email Address *</label>
+                <input required type="email" class="input-curvy-light text-xs" placeholder="rohan@creator.com"/>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Primary Platform *</label>
+                <select class="input-curvy-light text-xs">
+                  <option value="youtube">YouTube</option>
+                  <option value="x_twitter">X / Twitter</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="newsletter">Newsletter / Blog</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Handle / Profile URL *</label>
+                <input required type="text" class="input-curvy-light text-xs" placeholder="@handle or channel URL"/>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Primary Content Category *</label>
+                <select class="input-curvy-light text-xs">
+                  <option value="ai">AI &amp; Machine Learning</option>
+                  <option value="dev">Software Engineering &amp; Coding</option>
+                  <option value="saas">SaaS &amp; Productivity Tools</option>
+                  <option value="tech">Tech Reviews &amp; Hardware</option>
+                  <option value="startup">Startups &amp; Entrepreneurship</option>
+                  <option value="career">Career &amp; Tech Education</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Estimated Audience Size *</label>
+                <select class="input-curvy-light text-xs">
+                  <option value="10k_50k">10,000 — 50,000</option>
+                  <option value="50k_200k">50,000 — 200,000</option>
+                  <option value="200k_500k">200,000 — 500,000</option>
+                  <option value="500k_plus">500,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs text-[#555555] block mb-1.5 font-semibold">Link to Media Kit / Best Content Sample</label>
+              <input type="url" class="input-curvy-light text-xs" placeholder="https://drive.google.com/... or link to top video"/>
+            </div>
+
+            <div class="pt-3">
+              <button type="submit" class="btn-pill-light w-full justify-center text-xs py-3.5">
+                Submit Creator Application
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 5: CREATOR FAQ (BLACK BACKGROUND - CURVED)
+         ========================================= -->
+    <section class="section-dark-curved py-28 md:py-36">
+      <div class="max-w-[900px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center space-y-4 mb-14 reveal">
+          <span class="text-xs uppercase tracking-widest text-[#777777] font-semibold">Got Questions?</span>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white">Creator Network FAQ</h2>
+        </div>
+
+        <div class="space-y-4">
+          
+          <div class="card-dark p-6 rounded-2xl reveal">
+            <h3 class="font-serif text-xl text-white mb-2">Is there any fee to join the creator network?</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              No. Joining our network is 100% free. We work directly with commissioning global brands who pay for campaign collaborations.
+            </p>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-1">
+            <h3 class="font-serif text-xl text-white mb-2">Do you only work with creators with millions of subscribers?</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              No. We value audience credibility and content quality far above vanity metrics. We actively collaborate with micro-influencers and mid-tier specialized creators whose audiences trust their opinions.
+            </p>
+          </div>
+
+          <div class="card-dark p-6 rounded-2xl reveal reveal-delay-2">
+            <h3 class="font-serif text-xl text-white mb-2">How do sponsorship offers reach me?</h3>
+            <p class="text-sm text-[#999999] font-light leading-relaxed">
+              Once approved into our network database, our creator strategy team reaches out with specific campaign briefs, timeline requirements, and compensation details whenever an international brand matches your audience.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimalist Black & White Footer -->
+  <footer class="bg-[#090909] text-white border-t border-white/5 pt-20 pb-12">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12">
+      
+      <div class="md:col-span-5 space-y-5">
+        <span class="font-semibold text-lg tracking-widest text-white uppercase block">
+          HUTTINGDON
+        </span>
+        <p class="text-sm text-[#888888] max-w-sm font-light leading-relaxed">
+          Huttingdon helps international tech, AI and SaaS companies reach Indian audiences through strategic influencer marketing campaigns with relevant Indian creators.
+        </p>
+        <div class="text-xs text-[#555555]">
+          India • United States • United Kingdom • Europe
+        </div>
+      </div>
+
+      <div class="md:col-span-3 md:col-start-7">
+        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Navigation</h5>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="index.html" class="text-[#888888] hover:text-white transition-colors">Home</a></li>
+          <li><a href="work.html" class="text-[#888888] hover:text-white transition-colors">Work &amp; Strategy</a></li>
+          <li><a href="creators.html" class="text-white hover:text-white transition-colors">For Creators (Join Network)</a></li>
+          <li><a href="about.html" class="text-[#888888] hover:text-white transition-colors">About Us</a></li>
+          <li><a href="contact.html" class="text-[#888888] hover:text-white transition-colors">Contact / Plan Campaign</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">The India Playbook</h5>
+        <p class="text-xs text-[#888888] mb-4 font-light leading-relaxed">
+          Receive quarterly intelligence on India's tech creator economy and market entry strategies.
+        </p>
+        <form class="newsletter-form flex gap-2">
+          <input required class="input-curvy-dark text-xs py-2.5" placeholder="work@company.com" type="email"/>
+          <button type="submit" class="btn-pill-dark text-xs py-2.5 px-4" aria-label="Subscribe">
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-[#555555]">
+      <p>© 2026 Huttingdon. All rights reserved.</p>
+      <p class="mt-4 md:mt-0 font-light">India Tech × Creator Marketing</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
