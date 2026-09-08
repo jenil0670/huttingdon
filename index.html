@@ -56,7 +56,7 @@
       <!-- Action Button -->
       <div class="hidden md:flex items-center">
         <button data-open-modal="consultation-modal" class="btn-pill-dark text-xs py-2 px-5">
-          Plan My Launch
+          Create Local Buzz
         </button>
       </div>
 
@@ -82,7 +82,7 @@
       <a href="contact.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Contact</a>
     </div>
     <div class="flex flex-col gap-3 pt-6 border-t border-white/10">
-      <button data-open-modal="consultation-modal" class="btn-pill-dark w-full justify-center">Plan My Launch</button>
+      <button data-open-modal="consultation-modal" class="btn-pill-dark w-full justify-center">Create Local Buzz</button>
       <a href="creators.html" class="btn-pill-glass w-full justify-center text-center">Join Creator Network</a>
     </div>
   </div>
@@ -90,10 +90,11 @@
   <main class="flex-grow">
     
     <!-- =========================================
-         SECTION 1: HERO
+         SECTION 1: HERO (BLACK BACKGROUND)
+         Huttingdon = Local + Influencers + Buzz
          ========================================= -->
-    <section class="section-dark min-h-[85vh] flex flex-col justify-between pt-24 md:pt-36 pb-20 md:pb-28">
-      <div class="max-w-[1200px] mx-auto px-6 md:px-12 w-full">
+    <section class="section-dark min-h-[90vh] flex flex-col justify-between pt-24 md:pt-36 pb-20 md:pb-28">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12 w-full space-y-16">
         
         <!-- Top Hero Copy -->
         <div class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-7 reveal">
@@ -101,86 +102,183 @@
           <!-- Category Pill -->
           <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2.5">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Regional Creator Marketing</span>
+            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Regional Influencers · Local Buzz</span>
           </div>
 
           <!-- Main Headline -->
-          <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.1] tracking-tight text-white">
-            Local businesses deserve <span class="italic font-serif">local influence.</span>
+          <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.08] tracking-tight text-white max-w-5xl">
+            Turn regional influence into <br/>
+            <span class="italic font-serif">local buzz.</span>
           </h1>
 
           <!-- Supporting Copy -->
           <p class="text-base sm:text-lg md:text-xl text-[#999999] font-light max-w-2xl leading-relaxed">
-            We help businesses use relevant creators to get discovered, talked about, and remembered by the people who actually matter — the people around them.
+            We connect local businesses with regional creators to create real-world awareness, excitement, and conversations where it actually matters — nearby.
           </p>
 
-          <!-- CTAs -->
-          <div class="flex flex-wrap justify-center items-center gap-4 pt-1">
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
             <button data-open-modal="consultation-modal" class="btn-pill-dark">
-              Plan My Launch
+              Create Local Buzz
               <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
             <a href="creators.html" class="btn-pill-glass">
-              For Creators
+              Join Creator Network
             </a>
           </div>
 
         </div>
 
-      <!-- Trust Strip Ticker (Master Philosophy) -->
+        <!-- Visual Storytelling: The Attention Progression Pipeline -->
+        <!-- LOCAL BUSINESS → REGIONAL INFLUENCER → LOCAL AUDIENCE → BUZZ -->
+        <div class="buzz-pipeline-container reveal reveal-delay-1 pt-6">
+          <div class="text-center mb-6">
+            <span class="text-[11px] font-mono uppercase tracking-widest text-[#777777]">How Attention Moves Nearby</span>
+          </div>
+
+          <div class="buzz-pipeline-grid">
+            
+            <!-- Step 1: Local Business -->
+            <div class="buzz-pipeline-node group">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[#888888]">01 // ORIGIN</span>
+                <span class="buzz-pulse-beacon"></span>
+              </div>
+              <div class="my-4 space-y-1.5">
+                <div class="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-3">
+                  <span class="material-symbols-outlined text-xl">storefront</span>
+                </div>
+                <h3 class="font-serif text-lg text-white">Local Business</h3>
+                <p class="text-xs text-[#888888] font-light leading-relaxed">
+                  A new outlet, dining launch, pop-up, or local brand ready to be discovered.
+                </p>
+              </div>
+              <div class="text-[11px] font-mono text-[#666666]">Opening · Launch · Event</div>
+              <div class="pipeline-arrow-indicator">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </div>
+
+            <!-- Step 2: Regional Influencer -->
+            <div class="buzz-pipeline-node group">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[#888888]">02 // CURATION</span>
+                <span class="buzz-pulse-beacon"></span>
+              </div>
+              <div class="my-4 space-y-1.5">
+                <div class="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-3">
+                  <span class="material-symbols-outlined text-xl">verified</span>
+                </div>
+                <h3 class="font-serif text-lg text-white">Regional Creator</h3>
+                <p class="text-xs text-[#888888] font-light leading-relaxed">
+                  Vetted voices whose taste, content, and trusted recommendation locals genuinely follow.
+                </p>
+              </div>
+              <div class="text-[11px] font-mono text-[#666666]">Relevance &gt; Followers</div>
+              <div class="pipeline-arrow-indicator">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Local Audience -->
+            <div class="buzz-pipeline-node group">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[#888888]">03 // CATCHMENT</span>
+                <span class="buzz-pulse-beacon"></span>
+              </div>
+              <div class="my-4 space-y-1.5">
+                <div class="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-3">
+                  <span class="material-symbols-outlined text-xl">near_me</span>
+                </div>
+                <h3 class="font-serif text-lg text-white">Local Audience</h3>
+                <p class="text-xs text-[#888888] font-light leading-relaxed">
+                  People living, working, and spending weekends within your actual neighbourhood catchment.
+                </p>
+              </div>
+              <div class="text-[11px] font-mono text-[#666666]">5km Radius Focus</div>
+              <div class="pipeline-arrow-indicator">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </div>
+
+            <!-- Step 4: Real-World Buzz -->
+            <div class="buzz-pipeline-node group border-white/20 bg-white/[0.04]">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-white">04 // OUTCOME</span>
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              </div>
+              <div class="my-4 space-y-1.5">
+                <div class="w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white mb-3">
+                  <span class="material-symbols-outlined text-xl">local_fire_department</span>
+                </div>
+                <h3 class="font-serif text-lg text-white">Real-World Buzz</h3>
+                <p class="text-xs text-[#999999] font-light leading-relaxed">
+                  Packed launch tables, active footfall, word-of-mouth chats, and sustained patronage.
+                </p>
+              </div>
+              <div class="text-[11px] font-mono text-white font-medium">From Business to Buzz</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Trust Strip Ticker (Core Strategic Anchors) -->
       <div class="mt-20 pt-8 border-t border-white/5 overflow-hidden select-none">
         <div class="marquee-smooth flex items-center gap-14 text-xs uppercase tracking-widest text-[#777777] font-medium">
-          <span class="text-white/90">Local Businesses Deserve Local Influence</span>
+          <span class="text-white/90">Huttingdon = Local + Influencers + Buzz</span>
           <span class="opacity-30">•</span>
           <span class="text-white/90">Relevance Over Reach</span>
           <span class="opacity-30">•</span>
-          <span class="text-white/90">Strategy &gt; Followers</span>
+          <span class="text-white/90">Local Over Generic</span>
           <span class="opacity-30">•</span>
-          <span class="text-white/90">Trust &gt; Promotion</span>
+          <span class="text-white/90">Influence Over Impressions</span>
           <span class="opacity-30">•</span>
-          <span class="text-white/90">Attention &gt; Noise</span>
+          <span class="text-white/90">Strategy Over Follower Count</span>
           <span class="opacity-30">•</span>
-          <span class="text-white/90">Long-Term &gt; One-Off</span>
+          <span class="text-white/90">Attention Over Noise</span>
           <span class="opacity-30">•</span>
           <span class="text-white/90">Make People Nearby Care</span>
           <span class="opacity-30">•</span>
-          <span class="text-white/90">From Local Business to Local Conversation</span>
+          <span class="text-white/90">From Business to Buzz</span>
         </div>
       </div>
 
     </section>
 
     <!-- =========================================
-         SECTION 2: OUR BELIEF & REALITY (WHITE BACKGROUND)
+         SECTION 2: OUR VIEW OF INFLUENCE (WHITE BACKGROUND)
+         The Relevance Advantage vs Generic Advertising
          ========================================= -->
-    <section id="belief" class="section-light py-28 md:py-36">
+    <section id="philosophy" class="section-light py-28 md:py-36">
       <div class="max-w-[1200px] mx-auto px-6 md:px-12">
         
         <div class="max-w-3xl mb-16 reveal">
           <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2 mb-4">
             <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
-            <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Our Core Belief</span>
+            <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Our View of Influence</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909] leading-tight mb-6">
-            The internet allows you to reach millions.<br/>
-            <span class="italic text-[#666666]">You rarely need millions.</span>
+          <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#090909] leading-tight mb-6">
+            Your business doesn’t need everyone.<br/>
+            <span class="italic text-[#666666]">It needs the right people nearby.</span>
           </h2>
           <p class="text-base sm:text-lg text-[#555555] font-light leading-relaxed">
-            A restaurant needs people who can actually visit. A salon needs people within its service area. A new outlet needs people who live, work, shop, and spend time nearby. A café doesn't need global reach — it needs local relevance.
+            Traditional advertising creates visibility, but visibility doesn't create conversation. A relevant regional influencer introduces your business through an established relationship of trust — making a restaurant, café, or new outlet feel genuinely worth visiting.
           </p>
         </div>
 
-        <!-- 3 Pillars of Local Marketing -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- 3 Pillars of Relevance -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
           
           <div class="floating-stack-light p-8 md:p-10 space-y-4 reveal">
             <div class="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center text-[#090909]">
               <span class="material-symbols-outlined text-2xl">location_on</span>
             </div>
-            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">01 // THE 5KM RADIUS</span>
+            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">01 // THE 5KM TRUTH</span>
             <h3 class="font-serif text-2xl text-[#090909]">Influence is Contextual</h3>
             <p class="text-xs sm:text-sm text-[#666666] font-light leading-relaxed">
-              Sometimes the most valuable audience is concentrated within a few kilometres. The people asking: <em>"Where should we go this weekend?"</em> Regional creators already lead those conversations.
+              A smaller creator whose audience actually lives in your neighbourhood will always drive more physical footfall than a massive creator whose followers live three time zones away.
             </p>
           </div>
 
@@ -188,21 +286,21 @@
             <div class="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center text-[#090909]">
               <span class="material-symbols-outlined text-2xl">tune</span>
             </div>
-            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">02 // RELEVANCE OVER FOLLOWER COUNT</span>
-            <h3 class="font-serif text-2xl text-[#090909]">Trust Over Vanity</h3>
+            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">02 // TRUST OVER VANITY</span>
+            <h3 class="font-serif text-2xl text-[#090909]">Not the Biggest. The Right Ones.</h3>
             <p class="text-xs sm:text-sm text-[#666666] font-light leading-relaxed">
-              A creator is more than a distribution channel. Their audience trusts their taste. But trust only works if the audience has the actual ability and intent to visit your business.
+              We look past surface follower numbers. We evaluate audience geography, genuine engagement, creator style, and whether their recommendation feels like a natural tip from a friend.
             </p>
           </div>
 
           <div class="floating-stack-light p-8 md:p-10 space-y-4 reveal reveal-delay-2">
             <div class="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center text-[#090909]">
-              <span class="material-symbols-outlined text-2xl">flag</span>
+              <span class="material-symbols-outlined text-2xl">psychology</span>
             </div>
-            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">03 // OBJECTIVE FIRST</span>
-            <h3 class="font-serif text-2xl text-[#090909]">Strategy, Not Just Rosters</h3>
+            <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold block">03 // CAMPAIGN ARCHITECTURE</span>
+            <h3 class="font-serif text-2xl text-[#090909]">Strategy Over Rosters</h3>
             <p class="text-xs sm:text-sm text-[#666666] font-light leading-relaxed">
-              We never begin with a spreadsheet of influencers. We begin with what you need to achieve: grand opening buzz, new menu discovery, footfall, or local recognition.
+              We don't start with <em>"which influencer should we hire?"</em> We start with: <em>What are we trying to make happen? Who needs to care? Where are they? And who already has their attention?</em>
             </p>
           </div>
 
@@ -212,7 +310,8 @@
     </section>
 
     <!-- =========================================
-         SECTION 3: THE 6-STAGE LOCAL LAUNCH FRAMEWORK (BLACK BACKGROUND)
+         SECTION 3: WHEN ATTENTION MATTERS MOST (BLACK BACKGROUND)
+         Core Moments: Openings, Launches, Events, Visibility
          ========================================= -->
     <section class="section-dark-curved py-28 md:py-36">
       <div class="max-w-[1200px] mx-auto px-6 md:px-12">
@@ -220,69 +319,64 @@
         <div class="text-center max-w-3xl mx-auto mb-16 reveal">
           <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2 mb-4">
             <span class="w-2 h-2 rounded-full bg-white"></span>
-            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">The Local Launch Framework</span>
+            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">When Local Attention Matters Most</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white">
-            A launch shouldn't begin when the doors open.
+            Built for the moments that <br/>
+            <span class="italic font-serif">demand local buzz.</span>
           </h2>
-          <p class="text-base text-[#999999] font-light mt-4 leading-relaxed">
-            Attention can and should be built before launch day. Here is how a creator-led campaign builds momentum that lasts.
+          <p class="text-base text-[#999999] font-light mt-4 leading-relaxed max-w-2xl mx-auto">
+            A launch shouldn't begin when the doors open. We build anticipation before day one, coordinate opening-week discovery, and sustain local social proof.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <!-- Stage 1 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888]">STAGE 01</span>
-            <h3 class="font-serif text-xl text-white">Anticipation</h3>
+          <!-- Moment 1: Cafés & Restaurants -->
+          <div class="floating-stack-dark p-8 space-y-4 reveal">
+            <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-xl">restaurant</span>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#888888]">DINING &amp; HOSPITALITY</span>
+            <h3 class="font-serif text-xl text-white">Cafés, Bakeries &amp; Dining</h3>
             <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Before opening, creators create curiosity and tease the arrival of something special in the neighbourhood.
+              Curated first-look tastings and atmosphere walkthroughs that give neighbourhood food lovers a reason to step out this weekend.
             </p>
           </div>
 
-          <!-- Stage 2 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888]">STAGE 02</span>
-            <h3 class="font-serif text-xl text-white">Discovery</h3>
+          <!-- Moment 2: Retail & Outlets -->
+          <div class="floating-stack-dark p-8 space-y-4 reveal reveal-delay-1">
+            <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-xl">storefront</span>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#888888]">RETAIL &amp; STORES</span>
+            <h3 class="font-serif text-xl text-white">New Outlets &amp; Store Debuts</h3>
             <p class="text-xs text-[#999999] font-light leading-relaxed">
-              City discovery and local lifestyle creators introduce the concept, aesthetic, and neighbourhood location.
+              Introduce your new address across the district with try-on styling sessions, opening perks, and organic customer UGC.
             </p>
           </div>
 
-          <!-- Stage 3 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888]">STAGE 03</span>
-            <h3 class="font-serif text-xl text-white">Experience</h3>
+          <!-- Moment 3: Pop-Ups & Events -->
+          <div class="floating-stack-dark p-8 space-y-4 reveal reveal-delay-2">
+            <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-xl">celebration</span>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#888888]">EXPERIENCES</span>
+            <h3 class="font-serif text-xl text-white">Events, Pop-Ups &amp; Festivals</h3>
             <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Curated first-look tastings and walkthroughs showcase the atmosphere and standout menu items or services.
+              Targeted anticipation drops and real-time coverage that sell out ticket waves and eliminate empty hours during your event.
             </p>
           </div>
 
-          <!-- Stage 4 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888]">STAGE 04</span>
-            <h3 class="font-serif text-xl text-white">Launch</h3>
+          <!-- Moment 4: Studios & Local Brands -->
+          <div class="floating-stack-dark p-8 space-y-4 reveal reveal-delay-3">
+            <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-xl">fitness_center</span>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#888888]">COMMUNITY SPOTS</span>
+            <h3 class="font-serif text-xl text-white">Studios, Salons &amp; Wellness</h3>
             <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Coordinated opening week activation transforms online attention into physical queues and booked tables.
-            </p>
-          </div>
-
-          <!-- Stage 5 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888]">STAGE 05</span>
-            <h3 class="font-serif text-xl text-white">Social Proof</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Community visitors share their genuine experiences, validating that the new spot is worth visiting.
-            </p>
-          </div>
-
-          <!-- Stage 6 -->
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888]">STAGE 06</span>
-            <h3 class="font-serif text-xl text-white">Continued Attention</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Ongoing creator collaborations and seasonal moments prevent post-launch drop-off and sustain local relevance.
+              Pre-launch founding member drives and routine spotlights that build genuine local community credibility before opening.
             </p>
           </div>
 
@@ -292,107 +386,95 @@
     </section>
 
     <!-- =========================================
-         SECTION 4: BUSINESSES & MOMENTS (WHITE BACKGROUND)
+         SECTION 4: THE REGIONAL ECOSYSTEM (WHITE BACKGROUND)
+         Businesses × Influencers × Local Communities
          ========================================= -->
     <section class="section-light py-28 md:py-36">
       <div class="max-w-[1200px] mx-auto px-6 md:px-12">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2 mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
+            <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">The Regional Ecosystem</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#090909] leading-tight">
+            Connecting Businesses, Influencers <br/>
+            <span class="italic text-[#666666]">&amp; Local Communities.</span>
+          </h2>
+          <p class="text-base text-[#555555] font-light mt-4">
+            We act as the bridge — making regional creator marketing systematic, transparent, and effortlessly accessible.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          <div class="lg:col-span-5 space-y-6 reveal">
-            <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
-              <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Who We Work With</span>
-            </div>
-            
-            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909] leading-tight">
-              Businesses where word-of-mouth is everything.
-            </h2>
-            
-            <p class="text-sm sm:text-base text-[#555555] font-light leading-relaxed">
-              Huttingdon is built for businesses where local discovery drives real revenue. We work around the critical moments when you need attention most.
-            </p>
-
-            <div class="p-6 rounded-3xl bg-[#f5f5f7] border border-black/5 space-y-3">
-              <h4 class="font-serif text-lg text-[#090909]">The Moments That Matter:</h4>
-              <ul class="space-y-2 text-xs text-[#555555] font-light">
-                <li class="flex items-center gap-2">
+          <!-- Card A: For Local Businesses -->
+          <div class="p-8 md:p-12 rounded-[36px] bg-[#f9f9fa] border border-black/8 flex flex-col justify-between space-y-8 reveal">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase tracking-widest text-[#888888]">FOR LOCAL BUSINESSES</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-black/5 text-[#444444]">End-to-End Campaign Delivery</span>
+              </div>
+              <h3 class="font-serif text-2xl md:text-3xl text-[#090909]">
+                Zero spreadsheet headaches. Coordinated local buzz.
+              </h3>
+              <p class="text-sm text-[#666666] font-light leading-relaxed">
+                Businesses shouldn’t have to message hundreds of profiles, decipher engagement rates, negotiate individually, or manage schedules. We handle creator matching, campaign strategy, briefs, deliverables, and tracking.
+              </p>
+              
+              <div class="pt-2 space-y-2 text-xs text-[#555555]">
+                <div class="flex items-center gap-2.5">
                   <span class="material-symbols-outlined text-sm text-[#090909]">check_circle</span>
-                  "We're opening a new outlet next month."
-                </li>
-                <li class="flex items-center gap-2">
+                  <span>Hyper-local creator matching based on your location and audience</span>
+                </div>
+                <div class="flex items-center gap-2.5">
                   <span class="material-symbols-outlined text-sm text-[#090909]">check_circle</span>
-                  "We're introducing a seasonal menu or product."
-                </li>
-                <li class="flex items-center gap-2">
+                  <span>Strategic rollout timed around your launch moments</span>
+                </div>
+                <div class="flex items-center gap-2.5">
                   <span class="material-symbols-outlined text-sm text-[#090909]">check_circle</span>
-                  "We're hosting a community event or experience."
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-sm text-[#090909]">check_circle</span>
-                  "We want the neighbourhood to know we're here."
-                </li>
-              </ul>
+                  <span>Real footfall, reservations, and neighbourhood talk</span>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <button data-open-modal="consultation-modal" class="btn-pill-light text-xs">
-                Tell Us About Your Business
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <div class="pt-4">
+              <button data-open-modal="consultation-modal" class="btn-pill-light">
+                Create Local Buzz
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
               </button>
             </div>
           </div>
 
-          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 reveal reveal-delay-1">
-            
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">restaurant</span>
-              <h3 class="font-serif text-lg text-[#090909]">Restaurants &amp; Cafés</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                New openings, seasonal menu updates, tasting experiences, and creating local dining talk.
+          <!-- Card B: For Regional Creators -->
+          <div class="p-8 md:p-12 rounded-[36px] bg-[#090909] text-white border border-white/10 flex flex-col justify-between space-y-8 reveal reveal-delay-1">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase tracking-widest text-[#888888]">FOR REGIONAL CREATORS</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-white/10 text-[#cccccc]">Curated Creator Network</span>
+              </div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white">
+                Partner with great businesses opening around you.
+              </h3>
+              <p class="text-sm text-[#999999] font-light leading-relaxed">
+                Join our regional network across food, lifestyle, fashion, beauty, fitness, student life, and city discovery. Get considered for meaningful paid campaigns that feel natural to your taste and valuable to your followers.
               </p>
+
+              <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-[#aaaaaa]">
+                <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/8">Food &amp; Cafés</span>
+                <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/8">Lifestyle &amp; City</span>
+                <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/8">Fashion &amp; Stores</span>
+                <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/8">Student &amp; Youth</span>
+                <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/8">Experiences</span>
+              </div>
             </div>
 
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">spa</span>
-              <h3 class="font-serif text-lg text-[#090909]">Salons &amp; Beauty</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                Service walkthroughs, transformation reels, and building neighbourhood appointment trust.
-              </p>
+            <div class="pt-4">
+              <a href="creators.html" class="btn-pill-dark">
+                Join Creator Network
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
             </div>
-
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">fitness_center</span>
-              <h3 class="font-serif text-lg text-[#090909]">Gyms &amp; Fitness Studios</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                Pre-launch membership drives, trainer spotlights, and community workout challenges.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">storefront</span>
-              <h3 class="font-serif text-lg text-[#090909]">Retail &amp; Fashion Outlets</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                Store debuts, collection drops, styling sessions, and opening weekend footfall.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">celebration</span>
-              <h3 class="font-serif text-lg text-[#090909]">Events &amp; Experiences</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                Festivals, pop-ups, workshops, and driving ticket sales from relevant local communities.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-black/8 bg-white shadow-sm space-y-2">
-              <span class="material-symbols-outlined text-2xl text-[#090909]">explore</span>
-              <h3 class="font-serif text-lg text-[#090909]">New Location Promotion</h3>
-              <p class="text-xs text-[#666666] font-light leading-relaxed">
-                Helping expanding brands become beloved fixtures in newly entered cities and areas.
-              </p>
-            </div>
-
           </div>
 
         </div>
@@ -401,105 +483,33 @@
     </section>
 
     <!-- =========================================
-         SECTION 5: WHAT MAKES US DIFFERENT (BLACK BACKGROUND)
+         SECTION 5: FINAL CALL TO ACTION (BLACK BACKGROUND)
+         Make Your Local Launch Impossible to Miss
          ========================================= -->
-    <section class="section-dark-curved py-28 md:py-36">
-      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
-        
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2 mb-4">
-            <span class="w-2 h-2 rounded-full bg-white"></span>
-            <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Why Huttingdon</span>
-          </div>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white">
-            Built different by design.
-          </h2>
-          <p class="text-sm sm:text-base text-[#999999] font-light mt-3">
-            How we approach regional creator marketing with transparency and business thinking.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <div class="floating-stack-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">01 // LOCAL RELEVANCE</span>
-            <h3 class="font-serif text-xl text-white">Where People Actually Live</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              We care about where an audience actually lives and spends time, not arbitrary global vanity numbers.
-            </p>
-          </div>
-
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">02 // STRATEGY FIRST</span>
-            <h3 class="font-serif text-xl text-white">Business Objectives</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              We begin with what you need to achieve, then tailor the creator ecosystem around that objective.
-            </p>
-          </div>
-
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">03 // RELEVANCE OVER REACH</span>
-            <h3 class="font-serif text-xl text-white">Quality of Attention</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              A relevant audience within walking distance will always be worth more than a million distant impressions.
-            </p>
-          </div>
-
-          <div class="floating-stack-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">04 // CREATOR FIT</span>
-            <h3 class="font-serif text-xl text-white">Natural Brand Compatibility</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Content works best when it feels natural to the creator and genuinely useful to their community.
-            </p>
-          </div>
-
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">05 // STRUCTURED EXECUTION</span>
-            <h3 class="font-serif text-xl text-white">Simple For You</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              Discovery, outreach, scheduling, deliverables, and campaign tracking are managed seamlessly end-to-end.
-            </p>
-          </div>
-
-          <div class="floating-stack-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888] uppercase tracking-wider">06 // TRANSPARENCY</span>
-            <h3 class="font-serif text-xl text-white">Zero Fabricated Claims</h3>
-            <p class="text-xs text-[#999999] font-light leading-relaxed">
-              We don't believe in fake follower metrics, inflated vanity claims, or meaningless marketing buzzwords.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         SECTION 6: FINAL CTA (WHITE BACKGROUND)
-         ========================================= -->
-    <section class="section-light py-28 md:py-36 text-center">
+    <section class="section-dark-curved py-28 md:py-36 text-center">
       <div class="max-w-[900px] mx-auto px-6 md:px-12 space-y-8 reveal">
         
-        <div class="pill-light px-4 py-1.5 inline-flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#090909]"></span>
-          <span class="text-xs font-semibold text-[#555555] tracking-wider uppercase">Make People Nearby Care</span>
+        <div class="pill-dark px-4 py-1.5 inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          <span class="text-xs font-medium text-[#b0b0b0] tracking-wider uppercase">Make People Nearby Care</span>
         </div>
 
-        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#090909] leading-tight">
-          Turn regional influence into <br/><span class="italic text-[#666666]">local opportunity.</span>
+        <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white leading-tight">
+          Make your local launch <br/>
+          <span class="italic font-serif">impossible to miss.</span>
         </h2>
 
-        <p class="text-base sm:text-lg text-[#555555] font-light max-w-xl mx-auto leading-relaxed">
-          Tell us what you're opening, launching, or promoting. We'll design a creator strategy tailored to your neighbourhood and timeline.
+        <p class="text-base sm:text-lg text-[#999999] font-light max-w-xl mx-auto leading-relaxed">
+          Tell us what you're opening, introducing, or hosting. We'll connect you with the regional creators who can turn your launch into local buzz.
         </p>
 
         <div class="pt-4 flex flex-wrap justify-center gap-4">
-          <button data-open-modal="consultation-modal" class="btn-pill-light">
-            Plan My Launch
+          <button data-open-modal="consultation-modal" class="btn-pill-dark">
+            Create Local Buzz
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
-          <a href="creators.html" class="btn-pill-dark">
-            Become a Huttingdon Creator
+          <a href="creators.html" class="btn-pill-glass">
+            Join Creator Network
           </a>
         </div>
 
@@ -518,8 +528,8 @@
         <p class="text-sm text-[#888888] max-w-sm font-light leading-relaxed">
           Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine influence in their communities.
         </p>
-        <div class="text-xs text-[#555555]">
-          Local businesses deserve local influence.
+        <div class="text-xs text-[#666666] font-mono uppercase tracking-wider">
+          Huttingdon = Local + Influencers + Buzz
         </div>
       </div>
 
@@ -561,8 +571,8 @@
     <div class="modal-container p-8 md:p-10">
       <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
         <div>
-          <span class="text-xs text-[#888888] uppercase tracking-wider font-medium">Local Campaign Planning</span>
-          <h3 class="font-serif text-2xl text-white mt-1">Plan My Launch</h3>
+          <span class="text-xs text-[#888888] uppercase tracking-wider font-medium">Regional Creator Marketing</span>
+          <h3 class="font-serif text-2xl text-white mt-1">Create Local Buzz</h3>
         </div>
         <button data-close-modal class="text-[#777777] hover:text-white p-1" aria-label="Close Dialog">
           <span class="material-symbols-outlined text-2xl">close</span>
@@ -619,7 +629,7 @@
         </div>
         <div class="pt-2 flex justify-end gap-3">
           <button type="button" data-close-modal class="btn-pill-glass text-xs py-2 px-5">Cancel</button>
-          <button type="submit" class="btn-pill-dark text-xs py-2 px-6">Plan My Launch</button>
+          <button type="submit" class="btn-pill-dark text-xs py-2 px-6">Create Local Buzz</button>
         </div>
       </form>
     </div>

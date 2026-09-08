@@ -836,3 +836,94 @@ select.input-curvy-dark option {
   box-shadow: 0 32px 70px -15px rgba(0, 0, 0, 0.12);
 }
 
+/* =========================================
+   VISUAL PROGRESSION PIPELINE
+   BUSINESS → INFLUENCER → AUDIENCE → BUZZ
+   ========================================= */
+.buzz-pipeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.buzz-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .buzz-pipeline-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+.buzz-pipeline-node {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buzz-pipeline-node:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.buzz-pulse-beacon {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  display: inline-block;
+}
+
+.buzz-pulse-beacon::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  animation: pulseRadar 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulseRadar {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.pipeline-arrow-indicator {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .pipeline-arrow-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    color: rgba(255, 255, 255, 0.22);
+  }
+}
+
