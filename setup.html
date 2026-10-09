@@ -1,168 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <title>Huttingdon — Supabase Table Setup</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #0d0d0d; color: #e4e2e1; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .container { max-width: 640px; width: 100%; }
-    h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
-    p { color: #888; font-size: 14px; margin-bottom: 28px; line-height: 1.6; }
-    .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
-    .card h2 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .card small { color: #666; font-size: 12px; display: block; margin-bottom: 14px; }
-    .status { display: flex; align-items: center; gap: 10px; font-size: 13px; padding: 10px 14px; border-radius: 8px; margin-top: 10px; }
-    .status.pending { background: #1e1e1e; color: #888; border: 1px solid #2a2a2a; }
-    .status.loading { background: #1a2030; color: #4a90e2; border: 1px solid #2a3a5a; }
-    .status.success { background: #0f2a1a; color: #4ade80; border: 1px solid #166534; }
-    .status.error { background: #2a0f0f; color: #f87171; border: 1px solid #7f1d1d; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-    button { width: 100%; padding: 14px; background: #f5f5f5; color: #0d0d0d; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 8px; letter-spacing: 0.05em; transition: background 0.2s; }
-    button:hover { background: #c5a059; }
-    button:disabled { background: #333; color: #666; cursor: not-allowed; }
-    .log { background: #111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 16px; margin-top: 16px; font-family: monospace; font-size: 12px; color: #ccc; max-height: 180px; overflow-y: auto; display: none; }
-    .log-line { padding: 3px 0; border-bottom: 1px solid #1a1a1a; }
-    .log-line.ok { color: #4ade80; }
-    .log-line.err { color: #f87171; }
-    .log-line.info { color: #60a5fa; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #e4e2e1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card small {
+      color: #666;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .status.pending {
+      background: #1e1e1e;
+      color: #888;
+      border: 1px solid #2a2a2a;
+    }
+
+    .status.loading {
+      background: #1a2030;
+      color: #4a90e2;
+      border: 1px solid #2a3a5a;
+    }
+
+    .status.success {
+      background: #0f2a1a;
+      color: #4ade80;
+      border: 1px solid #166534;
+    }
+
+    .status.error {
+      background: #2a0f0f;
+      color: #f87171;
+      border: 1px solid #7f1d1d;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #f5f5f5;
+      color: #0d0d0d;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #c5a059;
+    }
+
+    button:disabled {
+      background: #333;
+      color: #666;
+      cursor: not-allowed;
+    }
+
+    .log {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #ccc;
+      max-height: 180px;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .log-line {
+      padding: 3px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .log-line.ok {
+      color: #4ade80;
+    }
+
+    .log-line.err {
+      color: #f87171;
+    }
+
+    .log-line.info {
+      color: #60a5fa;
+    }
   </style>
 </head>
+
 <body>
-<div class="container">
-  <h1>🗄️ Huttingdon Supabase Setup</h1>
-  <p>This tool creates all required database tables in your Supabase project automatically. Click the button below to begin.</p>
+  <div class="container">
+    <h1>🗄️ Huttingdon Supabase Setup</h1>
+    <p>This tool creates all required database tables in your Supabase project automatically. Click the button below to
+      begin.</p>
 
-  <div class="card">
-    <h2>Table 1: consultations</h2>
-    <small>Stores campaign brief & contact form submissions</small>
-    <div class="status pending" id="status-consultations"><div class="dot"></div> Waiting...</div>
+    <div class="card">
+      <h2>Table 1: consultations</h2>
+      <small>Stores campaign brief & contact form submissions</small>
+      <div class="status pending" id="status-consultations">
+        <div class="dot"></div> Waiting...
+      </div>
+    </div>
+    <div class="card">
+      <h2>Table 2: creator_applications</h2>
+      <small>Stores creator sign-up form submissions</small>
+      <div class="status pending" id="status-creators">
+        <div class="dot"></div> Waiting...
+      </div>
+    </div>
+    <div class="card">
+      <h2>Table 3: newsletter_subscribers</h2>
+      <small>Stores newsletter email subscriptions</small>
+      <div class="status pending" id="status-newsletter">
+        <div class="dot"></div> Waiting...
+      </div>
+    </div>
+
+    <button id="setup-btn" onclick="runSetup()">🚀 Create All Tables Now</button>
+
+    <div class="log" id="log"></div>
   </div>
-  <div class="card">
-    <h2>Table 2: creator_applications</h2>
-    <small>Stores creator sign-up form submissions</small>
-    <div class="status pending" id="status-creators"><div class="dot"></div> Waiting...</div>
-  </div>
-  <div class="card">
-    <h2>Table 3: newsletter_subscribers</h2>
-    <small>Stores newsletter email subscriptions</small>
-    <div class="status pending" id="status-newsletter"><div class="dot"></div> Waiting...</div>
-  </div>
 
-  <button id="setup-btn" onclick="runSetup()">🚀 Create All Tables Now</button>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://lplbhffaynlxmzknoljy.supabase.co';
+    const SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwbGJoZmZheW5seG16a25vbGp5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4ODE3NDIyOCwiZXhwIjoyMTAzNzUwMjI4fQ.BMBtbG4ah3mJp7de2ZKhSX6iyenh2Z9qv7loAZeWDVg';
 
-  <div class="log" id="log"></div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const SUPABASE_URL = 'https://lplbhffaynlxmzknoljy.supabase.co';
-const SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwbGJoZmZheW5seG16a25vbGp5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4ODE3NDIyOCwiZXhwIjoyMTAzNzUwMjI4fQ.BMBtbG4ah3mJp7de2ZKhSX6iyenh2Z9qv7loAZeWDVg';
-
-const client = supabase.createClient(SUPABASE_URL, SERVICE_KEY, {
-  auth: { persistSession: false }
-});
-
-function log(msg, type = 'info') {
-  const logEl = document.getElementById('log');
-  logEl.style.display = 'block';
-  const line = document.createElement('div');
-  line.className = `log-line ${type}`;
-  line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
-  logEl.appendChild(line);
-  logEl.scrollTop = logEl.scrollHeight;
-}
-
-function setStatus(id, state, msg) {
-  const el = document.getElementById(id);
-  el.className = `status ${state}`;
-  el.innerHTML = `<div class="dot"></div> ${msg}`;
-}
-
-async function createTable(tableId, statusId, sql, testInsert) {
-  setStatus(statusId, 'loading', 'Creating table...');
-  log(`Creating table via SQL: ${tableId}`, 'info');
-
-  // Use Supabase SQL REST endpoint directly with service_role
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/`, {
-      method: 'GET',
-      headers: {
-        'apikey': SERVICE_KEY,
-        'Authorization': `Bearer ${SERVICE_KEY}`
-      }
+    const client = supabase.createClient(SUPABASE_URL, SERVICE_KEY, {
+      auth: { persistSession: false }
     });
-    log(`Supabase REST reachable: ${res.status}`, res.ok ? 'ok' : 'err');
-  } catch(e) {}
 
-  // Try inserting - if table exists, this succeeds; if not, we get 404/42P01
-  try {
-    const { data, error } = await client.from(tableId).insert([testInsert]).select();
-    if (error) {
-      if (error.code === '42P01' || error.message.includes('does not exist') || error.message.includes('relation')) {
-        log(`Table "${tableId}" does not exist — needs manual SQL creation`, 'err');
-        setStatus(statusId, 'error', '⚠️ Table missing — see instructions below');
+    function log(msg, type = 'info') {
+      const logEl = document.getElementById('log');
+      logEl.style.display = 'block';
+      const line = document.createElement('div');
+      line.className = `log-line ${type}`;
+      line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      logEl.appendChild(line);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function setStatus(id, state, msg) {
+      const el = document.getElementById(id);
+      el.className = `status ${state}`;
+      el.innerHTML = `<div class="dot"></div> ${msg}`;
+    }
+
+    async function createTable(tableId, statusId, sql, testInsert) {
+      setStatus(statusId, 'loading', 'Creating table...');
+      log(`Creating table via SQL: ${tableId}`, 'info');
+
+      // Use Supabase SQL REST endpoint directly with service_role
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/`, {
+          method: 'GET',
+          headers: {
+            'apikey': SERVICE_KEY,
+            'Authorization': `Bearer ${SERVICE_KEY}`
+          }
+        });
+        log(`Supabase REST reachable: ${res.status}`, res.ok ? 'ok' : 'err');
+      } catch (e) { }
+
+      // Try inserting - if table exists, this succeeds; if not, we get 404/42P01
+      try {
+        const { data, error } = await client.from(tableId).insert([testInsert]).select();
+        if (error) {
+          if (error.code === '42P01' || error.message.includes('does not exist') || error.message.includes('relation')) {
+            log(`Table "${tableId}" does not exist — needs manual SQL creation`, 'err');
+            setStatus(statusId, 'error', '⚠️ Table missing — see instructions below');
+            return false;
+          }
+          log(`Insert to "${tableId}" error: ${error.message} (${error.code})`, 'err');
+          setStatus(statusId, 'error', `Error: ${error.message}`);
+          return false;
+        }
+        log(`Table "${tableId}" exists and accepted test data!`, 'ok');
+        setStatus(statusId, 'success', '✅ Table ready & verified!');
+        return true;
+      } catch (ex) {
+        log(`Exception on "${tableId}": ${ex.message}`, 'err');
+        setStatus(statusId, 'error', `Exception: ${ex.message}`);
         return false;
       }
-      log(`Insert to "${tableId}" error: ${error.message} (${error.code})`, 'err');
-      setStatus(statusId, 'error', `Error: ${error.message}`);
-      return false;
     }
-    log(`Table "${tableId}" exists and accepted test data!`, 'ok');
-    setStatus(statusId, 'success', '✅ Table ready & verified!');
-    return true;
-  } catch(ex) {
-    log(`Exception on "${tableId}": ${ex.message}`, 'err');
-    setStatus(statusId, 'error', `Exception: ${ex.message}`);
-    return false;
-  }
-}
 
-async function runSetup() {
-  const btn = document.getElementById('setup-btn');
-  btn.disabled = true;
-  btn.textContent = 'Setting up...';
-  log('Starting Huttingdon Supabase table setup...', 'info');
+    async function runSetup() {
+      const btn = document.getElementById('setup-btn');
+      btn.disabled = true;
+      btn.textContent = 'Setting up...';
+      log('Starting Huttingdon Supabase table setup...', 'info');
 
-  const r1 = await createTable('consultations', 'status-consultations',
-    null,
-    { name: 'INIT_TEST', email: 'setup@huttingdon.com', company_name: 'Huttingdon Setup', website: 'https://huttingdon.com', objective: 'awareness', timeline: 'exploring', details: 'Setup verification row', page_source: 'setup.html' }
-  );
+      const r1 = await createTable('consultations', 'status-consultations',
+        null,
+        { name: 'INIT_TEST', email: 'setup@huttingdon.com', company_name: 'Huttingdon Setup', website: 'https://huttingdon.com', objective: 'awareness', timeline: 'exploring', details: 'Setup verification row', page_source: 'setup.html' }
+      );
 
-  const r2 = await createTable('creator_applications', 'status-creators',
-    null,
-    { full_name: 'INIT_TEST', email: 'creator-setup@huttingdon.com', platform: 'youtube', handle: '@setup', category: 'tech', audience_size: '10k_50k', portfolio_url: 'https://huttingdon.com', page_source: 'setup.html' }
-  );
+      const r2 = await createTable('creator_applications', 'status-creators',
+        null,
+        { full_name: 'INIT_TEST', email: 'creator-setup@huttingdon.com', platform: 'youtube', handle: '@setup', category: 'tech', audience_size: '10k_50k', portfolio_url: 'https://huttingdon.com', page_source: 'setup.html' }
+      );
 
-  const r3 = await createTable('newsletter_subscribers', 'status-newsletter',
-    null,
-    { email: 'newsletter-setup@huttingdon.com', page_source: 'setup.html' }
-  );
+      const r3 = await createTable('newsletter_subscribers', 'status-newsletter',
+        null,
+        { email: 'newsletter-setup@huttingdon.com', page_source: 'setup.html' }
+      );
 
-  const allOk = r1 && r2 && r3;
-  btn.disabled = false;
+      const allOk = r1 && r2 && r3;
+      btn.disabled = false;
 
-  if (allOk) {
-    btn.textContent = '✅ All Tables Ready!';
-    btn.style.background = '#4ade80';
-    log('🎉 All tables are ready. Huttingdon is fully connected to Supabase!', 'ok');
-  } else {
-    btn.textContent = '⚠️ Some Tables Missing — Use SQL Below';
-    btn.style.background = '#f59e0b';
-    log('', 'info');
-    log('MANUAL SETUP REQUIRED — Copy & run in Supabase > SQL Editor:', 'info');
-    log('', 'info');
-    if (!r1) {
-      log(`CREATE TABLE IF NOT EXISTS consultations (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, name text, email text, company_name text, website text, objective text, timeline text, details text, page_source text, submitted_at timestamptz DEFAULT now()); ALTER TABLE consultations DISABLE ROW LEVEL SECURITY;`, 'info');
+      if (allOk) {
+        btn.textContent = '✅ All Tables Ready!';
+        btn.style.background = '#4ade80';
+        log('🎉 All tables are ready. Huttingdon is fully connected to Supabase!', 'ok');
+      } else {
+        btn.textContent = '⚠️ Some Tables Missing — Use SQL Below';
+        btn.style.background = '#f59e0b';
+        log('', 'info');
+        log('MANUAL SETUP REQUIRED — Copy & run in Supabase > SQL Editor:', 'info');
+        log('', 'info');
+        if (!r1) {
+          log(`CREATE TABLE IF NOT EXISTS consultations (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, name text, email text, company_name text, website text, objective text, timeline text, details text, page_source text, submitted_at timestamptz DEFAULT now()); ALTER TABLE consultations DISABLE ROW LEVEL SECURITY;`, 'info');
+        }
+        if (!r2) {
+          log(`CREATE TABLE IF NOT EXISTS creator_applications (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, full_name text, email text, platform text, handle text, category text, audience_size text, portfolio_url text, page_source text, submitted_at timestamptz DEFAULT now()); ALTER TABLE creator_applications DISABLE ROW LEVEL SECURITY;`, 'info');
+        }
+        if (!r3) {
+          log(`CREATE TABLE IF NOT EXISTS newsletter_subscribers (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, email text UNIQUE, page_source text, subscribed_at timestamptz DEFAULT now()); ALTER TABLE newsletter_subscribers DISABLE ROW LEVEL SECURITY;`, 'info');
+        }
+      }
     }
-    if (!r2) {
-      log(`CREATE TABLE IF NOT EXISTS creator_applications (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, full_name text, email text, platform text, handle text, category text, audience_size text, portfolio_url text, page_source text, submitted_at timestamptz DEFAULT now()); ALTER TABLE creator_applications DISABLE ROW LEVEL SECURITY;`, 'info');
-    }
-    if (!r3) {
-      log(`CREATE TABLE IF NOT EXISTS newsletter_subscribers (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, email text UNIQUE, page_source text, subscribed_at timestamptz DEFAULT now()); ALTER TABLE newsletter_subscribers DISABLE ROW LEVEL SECURITY;`, 'info');
-    }
-  }
-}
-</script>
+  </script>
 </body>
+
 </html>

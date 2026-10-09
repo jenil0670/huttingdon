@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initStatsCounters();
   initMobileNav();
+  initMomentsBuzzBlobAnimation();
 });
 
 /* =========================================
@@ -203,7 +204,7 @@ function initStatsCounters() {
         const prefix = el.getAttribute('data-prefix') || '';
         const suffix = el.getAttribute('data-suffix') || '';
         const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-        
+
         let start = 0;
         const duration = 1800;
         const startTime = performance.now();
@@ -213,9 +214,9 @@ function initStatsCounters() {
           const progress = Math.min(elapsed / duration, 1);
           const easeProgress = 1 - Math.pow(1 - progress, 3);
           const currentVal = (start + (target - start) * easeProgress).toFixed(decimals);
-          
+
           el.innerText = `${prefix}${currentVal}${suffix}`;
-          
+
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
           } else {
@@ -385,7 +386,7 @@ function initForms() {
         submitBtn.innerHTML = originalText;
       }
       form.reset();
-      
+
       const modal = form.closest('.modal-overlay');
       if (modal) modal.classList.remove('active');
       document.body.style.overflow = '';
@@ -480,7 +481,7 @@ function initForms() {
       const input = form.querySelector('input[type="email"]');
       if (input && input.value.trim()) {
         const emailVal = input.value.trim();
-        
+
         const data = {
           email: emailVal,
           page_source: window.location.pathname.split('/').pop() || 'index.html',
@@ -558,6 +559,180 @@ function initMobileNav() {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
       document.body.style.overflow = '';
+    });
+  });
+}
+
+/* =========================================
+   9. MOMENTS BUZZ: MORPHING BLOB & SCROLL-TRIGGERED SVG DRAWING
+   ========================================= */
+function initMomentsBuzzBlobAnimation() {
+  const section = document.getElementById('moments-buzz-section');
+  const path = document.getElementById('buzz-drawing-path');
+  const svg = document.getElementById('buzz-drawing-svg');
+  const blobContainer = document.getElementById('buzz-blob-container');
+  const showcase = document.querySelector('.buzz-blob-showcase');
+  const slides = document.querySelectorAll('.buzz-slide');
+  const dots = document.querySelectorAll('.buzz-dot');
+  const badgeLabel = document.getElementById('buzz-badge-label');
+  const badgeCounter = document.getElementById('buzz-badge-counter');
+  const momentCards = document.querySelectorAll('[data-buzz-target]');
+
+  if (!section || !path || !blobContainer) return;
+
+  // 1. Prepare SVG Stroke Path for Drawing Animation
+  let pathLength = 0;
+  try {
+    pathLength = path.getTotalLength();
+  } catch (e) {
+    pathLength = 1100;
+  }
+
+  // Initially hide the stroke completely via dasharray & dashoffset
+  path.style.strokeDasharray = `${pathLength} ${pathLength}`;
+  path.style.strokeDashoffset = `${pathLength}`;
+
+  let hasDrawn = false;
+  let cycleInterval = null;
+  let currentSlideIndex = 0;
+
+  // Slide tags mapping matching the 4 moments
+  const slideData = [
+    { tag: 'DINING & HOSPITALITY', title: 'Cafés, Bakeries & Dining' },
+    { tag: 'RETAIL & STORES', title: 'New Outlets & Store Debuts' },
+    { tag: 'EXPERIENCES', title: 'Events, Pop-Ups & Festivals' },
+    { tag: 'COMMUNITY SPOTS', title: 'Studios, Salons & Wellness' }
+  ];
+
+  // Ensure all slides are hidden until the border is fully drawn
+  slides.forEach(slide => slide.classList.remove('active'));
+
+  function setActiveSlide(index) {
+    currentSlideIndex = index;
+
+    // Transition slides smoothly
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    // Update dot indicators
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Update Floating Glass Badge text & counter
+    if (badgeLabel && slideData[index]) {
+      badgeLabel.textContent = slideData[index].tag;
+    }
+    if (badgeCounter) {
+      badgeCounter.textContent = `0${index + 1} / 04`;
+    }
+
+    // Highlight corresponding moment card in 3/4th section
+    momentCards.forEach((card, i) => {
+      if (i === index) {
+        card.classList.add('buzz-card-active');
+      } else {
+        card.classList.remove('buzz-card-active');
+      }
+    });
+  }
+
+  function startCycleTimer() {
+    if (cycleInterval) clearInterval(cycleInterval);
+    cycleInterval = setInterval(() => {
+      const nextIndex = (currentSlideIndex + 1) % slides.length;
+      setActiveSlide(nextIndex);
+    }, 4000);
+  }
+
+  function onDrawingComplete() {
+    // Reveal images only now that the border has finished drawing itself
+    if (blobContainer) {
+      blobContainer.classList.add('is-revealed');
+      blobContainer.classList.add('morphing-active');
+    }
+    if (svg) svg.classList.add('fade-out');
+    if (showcase) showcase.classList.add('is-active');
+
+    // Display first image & activate moment card 0
+    setActiveSlide(0);
+    startCycleTimer();
+  }
+
+  function triggerDrawingAnimation() {
+    if (hasDrawn) return;
+    hasDrawn = true;
+
+    // Use GSAP if available
+    if (window.gsap && window.gsap.to) {
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        duration: 1.8,
+        ease: "power2.inOut",
+        onComplete: onDrawingComplete
+      });
+    } else {
+      // Native CSS transition fallback
+      path.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      path.style.strokeDashoffset = '0';
+      setTimeout(onDrawingComplete, 1850);
+    }
+  }
+
+  // 2. Scroll Trigger: perception observer via GSAP ScrollTrigger or Intersection Observer
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 75%",
+      once: true,
+      onEnter: () => {
+        triggerDrawingAnimation();
+      }
+    });
+  } else if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          triggerDrawingAnimation();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    });
+    observer.observe(section);
+  } else {
+    triggerDrawingAnimation();
+  }
+
+  // 4. Dot Click Interaction
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      setActiveSlide(index);
+      startCycleTimer();
+    });
+  });
+
+  // 5. Card Hover & Click Interaction in the 3/4th Section
+  momentCards.forEach((card, index) => {
+    card.addEventListener('mouseenter', () => {
+      setActiveSlide(index);
+      startCycleTimer();
+    });
+    card.addEventListener('click', () => {
+      setActiveSlide(index);
+      startCycleTimer();
     });
   });
 }
