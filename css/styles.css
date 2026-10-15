@@ -29,6 +29,8 @@ html {
   scroll-behavior: smooth;
   background-color: var(--bg-dark);
   font-family: var(--font-sans);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -37,8 +39,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -773,12 +773,14 @@ select.input-curvy-dark option {
   justify-content: center;
   padding: 20px;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.35s ease;
 }
 
 .modal-overlay.active {
   display: flex;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-container {
@@ -852,11 +854,15 @@ select.input-curvy-dark option {
   justify-content: space-between;
   padding: 32px 24px;
   transform: translateY(-100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-nav-overlay.open {
   transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 ::selection {

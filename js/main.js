@@ -78,6 +78,8 @@ async function sendToSupabase(tableNames, payload) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
   getSupabaseClient();
   initCustomCursor();
   initScrollAnimations();
