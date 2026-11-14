@@ -13,26 +13,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN with Influential Design System Tokens -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            "dark-base": "#090909",
-            "dark-surface": "#131313",
-            "light-base": "#ffffff",
-            "light-surface": "#f7f7f8"
+            primary: "#1866FE",
+            "primary-dark": "#0B2DFF",
+            secondary: "#A9DDE0",
+            tertiary: "#E0E0E099",
+            neutral: "#333333",
+            surface: "#FFFFFF",
+            "on-surface": "#FFFFFF",
+            "muted-surface": "#BFE7E9",
+            border: "#374151",
+            "text-muted": "#D7DEFF",
+            error: "#E64646"
           },
           fontFamily: {
-            sans: ["'Plus Jakarta Sans'", "-apple-system", "sans-serif"],
-            serif: ["'Playfair Display'", "serif"]
+            display: ["'GT America Extended'", "'Space Grotesk'", "-apple-system", "sans-serif"],
+            sans: ["'GT America'", "'Plus Jakarta Sans'", "-apple-system", "sans-serif"]
+          },
+          borderRadius: {
+            sm: "4px",
+            md: "8px",
+            lg: "12px",
+            xl: "24px",
+            "2xl": "32px",
+            full: "9999px"
           }
         }
       }
@@ -41,20 +56,22 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="bg-[#090909] text-white selection:bg-white selection:text-black">
+<body class="bg-[#A9DDE0] text-[#333333] antialiased selection:bg-[#1866FE] selection:text-white">
 
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress"></div>
 
-  <!-- Frosted Glass Floating Navbar -->
+  <!-- Influential Floating Pill Navbar -->
   <div class="navbar-frosted-container">
     <header class="navbar-frosted flex justify-between items-center">
       <!-- Animated Logo Branding on the Left -->
       <a href="index.html" class="flex items-center group">
-        <div class="logo-animated flex items-center justify-center"><img src="assets/new-logo.png" alt="Huttingdon Logo"
-            class="h-8 md:h-10 w-auto object-contain" /></div>
+        <div class="logo-animated flex items-center justify-center">
+          <img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-8 md:h-9 w-auto object-contain" />
+        </div>
       </a>
 
+      <!-- Desktop Nav Links -->
       <nav class="hidden md:flex items-center space-x-1">
         <a href="index.html" class="nav-link">Home</a>
         <a href="creators.html" class="nav-link">For Creators</a>
@@ -62,12 +79,14 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
+      <!-- Action Button -->
       <div class="hidden md:flex items-center">
-        <button data-open-modal="consultation-modal" class="btn-pill-dark text-xs py-2 px-5">
+        <button data-open-modal="consultation-modal" class="btn-pill-primary btn-pill-sm">
           Plan My Launch
         </button>
       </div>
 
+      <!-- Mobile Hamburger -->
       <button data-action="toggle-mobile-menu" class="md:hidden text-white p-1" aria-label="Toggle Navigation">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
@@ -76,321 +95,308 @@
 
   <!-- Mobile Drawer -->
   <div id="mobile-nav-overlay" class="mobile-nav-overlay md:hidden">
-    <div class="flex justify-between items-center border-b border-white/10 pb-6">
-      <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon"
-          class="h-8 w-auto object-contain" /></div>
+    <div class="flex justify-between items-center border-b border-[#374151] pb-6">
+      <div class="flex items-center">
+        <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+      </div>
       <button id="close-mobile-nav" class="text-white p-2" aria-label="Close Menu">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
-    <div class="flex flex-col space-y-7 my-auto">
-      <a href="index.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Home</a>
-      <a href="creators.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">For
-        Creators</a>
-      <a href="about.html" class="text-3xl font-medium text-white">About</a>
-      <a href="contact.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Contact</a>
+    <div class="flex flex-col space-y-6 my-auto">
+      <a href="index.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">Home</a>
+      <a href="creators.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">For Creators</a>
+      <a href="about.html" class="headline-md text-white">About</a>
+      <a href="contact.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">Contact</a>
     </div>
-    <div class="flex flex-col gap-3 pt-6 border-t border-white/10">
-      <button data-open-modal="consultation-modal" class="btn-pill-dark w-full justify-center">Plan My Launch</button>
-      <a href="creators.html" class="btn-pill-glass w-full justify-center text-center">Join Creator Network</a>
+    <div class="flex flex-col gap-3 pt-6 border-t border-[#374151]">
+      <button data-open-modal="consultation-modal" class="btn-pill-primary w-full justify-center">Plan My Launch</button>
+      <a href="creators.html" class="btn-pill-secondary w-full justify-center text-center">Join Creator Network</a>
     </div>
   </div>
 
-  <main class="flex-grow">
+  <main class="content-canvas mt-4 md:mt-6 space-y-8 md:space-y-12">
 
     <!-- =========================================
-         SECTION 1: HERO (BLACK BACKGROUND)
+         SECTION 1: HERO (ELECTRIC BLUE #1866FE PANEL)
          ========================================= -->
-    <section class="section-dark about-hero-bg pt-24 md:pt-36 pb-28 md:pb-40">
-      <div class="max-w-[1100px] mx-auto px-6 md:px-12 text-center space-y-8 reveal relative z-10">
-
-
-
-        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.12] text-white">
-          Local businesses deserve <br />
-          <span class="italic font-serif">local influence.</span>
+    <section class="about-hero-bg pt-16 md:pt-28 pb-16 md:pb-24 px-6 sm:px-10 md:px-16 text-center">
+      <div class="max-w-4xl mx-auto space-y-7 relative z-10 reveal">
+        <h1 class="headline-display text-white font-medium max-w-4xl mx-auto">
+          Local businesses deserve local influence.
         </h1>
 
-        <p class="text-base sm:text-lg md:text-xl text-[#999999] font-light max-w-2xl mx-auto leading-relaxed">
+        <p class="body-lg text-[#D7DEFF] max-w-2xl mx-auto leading-relaxed">
           Modern marketing has made it incredibly easy to reach people. It has not necessarily made it easier to matter
           to them.
         </p>
 
-      </div>
-    </section>
-
-    <!-- =========================================
-         SECTION 2: WHY HUTTINGDON EXISTS (WHITE BACKGROUND)
-         ========================================= -->
-    <section class="section-light py-28 md:py-36">
-      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-          <div class="lg:col-span-6 space-y-6 reveal">
-
-
-            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#090909] leading-tight">
-              Physical businesses compete online, <br />
-              <span class="italic text-[#666666]">but customers live in real places.</span>
-            </h2>
-
-            <p class="text-base text-[#555555] font-light leading-relaxed">
-              A restaurant may offer an unforgettable dining experience, yet remain invisible to people five kilometres
-              away. A new lifestyle outlet can open without generating meaningful anticipation. A local business can
-              spend money on advertising without building genuine trust.
-            </p>
-
-            <p class="text-base text-[#555555] font-light leading-relaxed">
-              At the same time, regional creators already have the attention and trust of these communities. Their
-              followers turn to them daily for recommendations: <em>"Where should we go? What should we try?"</em>
-            </p>
-
-            <div class="p-6 rounded-3xl bg-[#f5f5f7] border border-black/5">
-              <div class="font-serif text-xl text-[#090909] italic mb-1">
-                "Huttingdon exists to connect those two worlds."
-              </div>
-              <p class="text-xs text-[#666666] font-light">
-                Businesses that need attention. Creators who already have it. Communities that decide where to spend
-                their time and money.
-              </p>
-            </div>
-          </div>
-
-          <div class="lg:col-span-6 space-y-6 reveal reveal-delay-1">
-            <div class="card-light p-8 md:p-10 space-y-3">
-              <span class="text-xs font-semibold text-[#888888] uppercase tracking-wider block">OUR MISSION</span>
-              <h3 class="font-serif text-2xl text-[#090909]">More Relevant Creator Marketing</h3>
-              <p class="text-sm text-[#555555] font-light leading-relaxed">
-                To make creator marketing more relevant to the businesses and communities around us. Where businesses
-                can discover relevant creators, creators discover meaningful opportunities, and audiences discover
-                businesses through people they already trust.
-              </p>
-            </div>
-
-            <div class="card-light p-8 md:p-10 space-y-3">
-              <span class="text-xs font-semibold text-[#888888] uppercase tracking-wider block">WHAT WE ARE
-                BUILDING</span>
-              <h3 class="font-serif text-2xl text-[#090909]">The Regional Creator Ecosystem</h3>
-              <p class="text-sm text-[#555555] font-light leading-relaxed">
-                An infrastructure connecting <strong>Business × Creator × Community</strong>. We understand local
-                creator ecosystems deeply enough to know which creators influence which neighbourhoods, categories, and
-                moments.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         SECTION 3: OUR 7 PRINCIPLES (BLACK BACKGROUND)
-         ========================================= -->
-    <section class="section-dark-curved py-28 md:py-36">
-      <div class="max-w-[1200px] mx-auto px-6 md:px-12">
-
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white">
-            Principles that guide our work.
-          </h2>
-          <p class="text-base text-[#999999] font-light mt-3">
-            We don't believe in vanity numbers, fake results, or meaningless marketing claims.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <div class="card-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888] block">01 // PHILOSOPHY</span>
-            <h3 class="font-serif text-xl text-white">Local &gt; Generic</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              A local audience can matter exponentially more than a massive generic audience distributed across
-              continents.
-            </p>
-          </div>
-
-          <div class="card-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888] block">02 // ALIGNMENT</span>
-            <h3 class="font-serif text-xl text-white">Relevance &gt; Reach</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              Reach is useful only when the people reached have the intent and ability to visit your business.
-            </p>
-          </div>
-
-          <div class="card-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888] block">03 // PLANNING</span>
-            <h3 class="font-serif text-xl text-white">Strategy &gt; Followers</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              A list of influencers is not a strategy. We start with the business moment, timeline, and desired
-              real-world outcome.
-            </p>
-          </div>
-
-          <div class="card-dark p-8 space-y-3 reveal">
-            <span class="text-xs font-mono text-[#888888] block">04 // INTEGRITY</span>
-            <h3 class="font-serif text-xl text-white">Trust &gt; Promotion</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              Creator collaborations succeed when content feels natural to the creator and genuinely valuable to their
-              followers.
-            </p>
-          </div>
-
-          <div class="card-dark p-8 space-y-3 reveal reveal-delay-1">
-            <span class="text-xs font-mono text-[#888888] block">05 // IMPACT</span>
-            <h3 class="font-serif text-xl text-white">Attention &gt; Noise</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              The objective is never to create brief fleeting noise. It is to generate meaningful, lasting community
-              attention.
-            </p>
-          </div>
-
-          <div class="card-dark p-8 space-y-3 reveal reveal-delay-2">
-            <span class="text-xs font-mono text-[#888888] block">06 // RELATIONSHIPS</span>
-            <h3 class="font-serif text-xl text-white">Long-Term &gt; One-Off</h3>
-            <p class="text-sm text-[#999999] font-light leading-relaxed">
-              We build enduring bridges between businesses, creators, and neighbourhoods rather than isolated
-              transactions.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         SECTION 4: FINAL CTA (WHITE BACKGROUND)
-         ========================================= -->
-    <section class="section-light py-28 md:py-36 text-center">
-      <div class="max-w-[900px] mx-auto px-6 md:px-12 space-y-6 reveal">
-
-
-
-        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#090909] leading-tight">
-          Your business is local. <br />
-          <span class="italic text-[#666666]">Your marketing should be too.</span>
-        </h2>
-
-        <p class="text-base sm:text-lg text-[#555555] font-light max-w-xl mx-auto leading-relaxed">
-          Tell us what you're planning. We'll design a creator campaign focused on the people who live and spend around
-          you.
-        </p>
-
-        <div class="pt-4 flex justify-center gap-4">
-          <button data-open-modal="consultation-modal" class="btn-pill-light">
+        <div class="pt-3 flex justify-center">
+          <button data-open-modal="consultation-modal" class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
             Plan My Launch
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
         </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: WHY HUTTINGDON EXISTS (CLEAN WHITE #FFFFFF PANEL)
+         ========================================= -->
+    <section class="surface-clean-white py-16 md:py-24 px-6 sm:px-10 md:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative z-10">
+
+        <!-- Left Column (Narrative) -->
+        <div class="lg:col-span-6 space-y-6 reveal">
+          <h2 class="headline-lg text-[#333333]">
+            Physical businesses compete online, <br />
+            <span class="text-[#1866FE]">but customers live in real places.</span>
+          </h2>
+
+          <p class="body-md text-[#555555] leading-relaxed">
+            A restaurant may offer an unforgettable dining experience, yet remain invisible to people five kilometres
+            away. A new lifestyle outlet can open without generating meaningful anticipation. A local business can
+            spend money on advertising without building genuine trust.
+          </p>
+
+          <p class="body-md text-[#555555] leading-relaxed">
+            At the same time, regional creators already have the attention and trust of these communities. Their
+            followers turn to them daily for recommendations: <em>"Where should we go? What should we try?"</em>
+          </p>
+
+          <div class="p-6 rounded-xl bg-[#BFE7E9] border border-[#374151]/15">
+            <div class="headline-sm text-[#333333] font-medium mb-2">
+              "Huttingdon exists to connect those two worlds."
+            </div>
+            <p class="body-sm text-[#333333] font-normal leading-relaxed">
+              Businesses that need attention. Creators who already have it. Communities that decide where to spend
+              their time and money.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column (Mission & Ecosystem Cards) -->
+        <div class="lg:col-span-6 space-y-6 reveal reveal-delay-1">
+          <div class="card-light p-8 space-y-3">
+            <span class="overline text-[#1866FE] block">OUR MISSION</span>
+            <h3 class="headline-md text-[#333333]">More Relevant Creator Marketing</h3>
+            <p class="body-sm text-[#555555] leading-relaxed">
+              To make creator marketing more relevant to the businesses and communities around us. Where businesses
+              can discover relevant creators, creators discover meaningful opportunities, and audiences discover
+              businesses through people they already trust.
+            </p>
+          </div>
+
+          <div class="card-light p-8 space-y-3">
+            <span class="overline text-[#1866FE] block">WHAT WE ARE BUILDING</span>
+            <h3 class="headline-md text-[#333333]">The Regional Creator Ecosystem</h3>
+            <p class="body-sm text-[#555555] leading-relaxed">
+              An infrastructure connecting <strong>Business × Creator × Community</strong>. We understand local
+              creator ecosystems deeply enough to know which creators influence which neighbourhoods, categories, and
+              moments.
+            </p>
+          </div>
+        </div>
 
       </div>
     </section>
 
-  </main>
-
-  <!-- Minimalist Black & White Footer -->
-  <footer class="bg-[#090909] text-white border-t border-white/5 pt-20 pb-12">
-    <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12">
-
-      <div class="md:col-span-4 space-y-5">
-        <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon"
-            class="h-8 w-auto object-contain" /></div>
-        <p class="text-sm text-[#888888] max-w-sm font-light leading-relaxed">
-          Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine
-          influence in their communities.
+    <!-- =========================================
+         SECTION 3: OUR 7 PRINCIPLES (NEUTRAL DARK #333333 PANEL)
+         ========================================= -->
+    <section class="surface-neutral-dark py-16 md:py-24 px-6 sm:px-10 md:px-16">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <span class="overline text-[#A9DDE0] block mb-3">Our Guiding North Star</span>
+        <h2 class="headline-lg text-white">
+          Principles that guide our work.
+        </h2>
+        <p class="body-md text-[#D7DEFF] font-light mt-3">
+          We don't believe in vanity numbers, fake results, or meaningless marketing claims.
         </p>
-        <div class="text-xs text-[#666666] font-mono uppercase tracking-wider">
-          Huttingdon = Local + Influencers + Buzz
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card-dark p-7 space-y-3 reveal">
+          <span class="overline text-[#A9DDE0] block">01 // PHILOSOPHY</span>
+          <h3 class="headline-sm text-white font-medium">Local &gt; Generic</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            A local audience can matter exponentially more than a massive generic audience distributed across
+            continents.
+          </p>
         </div>
-      </div>
 
-      <div class="md:col-span-2">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Navigation</h5>
-        <ul class="space-y-3 text-sm font-light">
-          <li><a href="index.html" class="text-[#888888] hover:text-white transition-colors">Home</a></li>
-          <li><a href="creators.html" class="text-[#888888] hover:text-white transition-colors">For Creators</a></li>
-          <li><a href="about.html" class="text-white hover:text-white transition-colors">About Us</a></li>
-          <li><a href="contact.html" class="text-[#888888] hover:text-white transition-colors">Contact</a></li>
-        </ul>
-      </div>
+        <div class="card-dark p-7 space-y-3 reveal reveal-delay-1">
+          <span class="overline text-[#A9DDE0] block">02 // ALIGNMENT</span>
+          <h3 class="headline-sm text-white font-medium">Relevance &gt; Reach</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            Reach is useful only when the people reached have the intent and ability to visit your business.
+          </p>
+        </div>
 
-      <div class="md:col-span-3">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Contact & Inquiries</h5>
-        <ul class="space-y-3 text-sm font-light">
-          <li>
-            <span class="text-xs text-[#666666] block">Campaign Strategy</span>
-            <a href="mailto:influence@huttingdon.com"
-              class="text-[#888888] hover:text-white transition-colors">influence@huttingdon.com</a>
-          </li>
-          <li>
-            <span class="text-xs text-[#666666] block">Creator Partnerships</span>
-            <a href="mailto:creators@huttingdon.com"
-              class="text-[#888888] hover:text-white transition-colors">creators@huttingdon.com</a>
-          </li>
-          <li class="pt-1">
-            <span class="text-xs text-[#666666] block">For More Details</span>
-            <a href="tel:+918200014314" class="text-white hover:text-white font-medium transition-colors">+91
-              8200014314</a>
-          </li>
-        </ul>
-      </div>
+        <div class="card-dark p-7 space-y-3 reveal reveal-delay-2">
+          <span class="overline text-[#A9DDE0] block">03 // PLANNING</span>
+          <h3 class="headline-sm text-white font-medium">Strategy &gt; Followers</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            A list of influencers is not a strategy. We start with the business moment, timeline, and desired
+            real-world outcome.
+          </p>
+        </div>
 
-      <div class="md:col-span-3">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">The Local Dispatch</h5>
-        <p class="text-xs text-[#888888] mb-4 font-light leading-relaxed">
-          Insights on regional marketing, creator discovery, and neighbourhood launch strategies.
+        <div class="card-dark p-7 space-y-3 reveal">
+          <span class="overline text-[#A9DDE0] block">04 // INTEGRITY</span>
+          <h3 class="headline-sm text-white font-medium">Trust &gt; Promotion</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            Creator collaborations succeed when content feels natural to the creator and genuinely valuable to their
+            followers.
+          </p>
+        </div>
+
+        <div class="card-dark p-7 space-y-3 reveal reveal-delay-1">
+          <span class="overline text-[#A9DDE0] block">05 // IMPACT</span>
+          <h3 class="headline-sm text-white font-medium">Attention &gt; Noise</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            The objective is never to create brief fleeting noise. It is to generate meaningful, lasting community
+            attention.
+          </p>
+        </div>
+
+        <div class="card-dark p-7 space-y-3 reveal reveal-delay-2">
+          <span class="overline text-[#A9DDE0] block">06 // RELATIONSHIPS</span>
+          <h3 class="headline-sm text-white font-medium">Long-Term &gt; One-Off</h3>
+          <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
+            We build enduring bridges between businesses, creators, and neighbourhoods rather than isolated
+            transactions.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: FINAL CTA (ELECTRIC BLUE #1866FE PANEL)
+         ========================================= -->
+    <section class="hero-surface-blue py-16 md:py-24 px-6 sm:px-10 md:px-16 text-center">
+      <div class="max-w-3xl mx-auto space-y-7 relative z-10 reveal">
+        <h2 class="headline-display text-white">
+          Your business is local. Your marketing should be too.
+        </h2>
+
+        <p class="body-lg text-[#D7DEFF] max-w-xl mx-auto leading-relaxed">
+          Tell us what you're planning. We'll design a creator campaign focused on the people who live and spend around
+          you.
         </p>
-        <form class="newsletter-form flex gap-2">
-          <input required class="input-curvy-dark text-xs py-2.5" placeholder="your@business.com" type="email" />
-          <button type="submit" class="btn-pill-dark text-xs py-2.5 px-4" aria-label="Subscribe">
+
+        <div class="pt-3 flex justify-center">
+          <button data-open-modal="consultation-modal" class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
+            Plan My Launch
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
-        </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER (NEUTRAL DARK #333333)
+         ========================================= -->
+    <footer class="footer-neutral">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+
+        <div class="md:col-span-4 space-y-5">
+          <div class="flex items-center">
+            <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+          </div>
+          <p class="body-sm text-[#D7DEFF] max-w-sm font-light leading-relaxed">
+            Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine
+            influence in their communities.
+          </p>
+          <div class="overline text-[#A9DDE0]">
+            Huttingdon = Local + Influencers + Buzz
+          </div>
+        </div>
+
+        <div class="md:col-span-2 space-y-4">
+          <h5 class="overline text-white">Navigation</h5>
+          <ul class="space-y-2.5 body-sm">
+            <li><a href="index.html" class="text-[#D7DEFF] hover:text-white transition-colors">Home</a></li>
+            <li><a href="creators.html" class="text-[#D7DEFF] hover:text-white transition-colors">For Creators</a></li>
+            <li><a href="about.html" class="text-white hover:text-[#A9DDE0] transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-[#D7DEFF] hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="overline text-white">Contact &amp; Inquiries</h5>
+          <ul class="space-y-3 body-sm">
+            <li>
+              <span class="label-sm text-[#A9DDE0] block">Campaign Strategy</span>
+              <a href="mailto:influence@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors">influence@huttingdon.com</a>
+            </li>
+            <li>
+              <span class="label-sm text-[#A9DDE0] block">Creator Partnerships</span>
+              <a href="mailto:creators@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors">creators@huttingdon.com</a>
+            </li>
+            <li class="pt-1">
+              <span class="label-sm text-[#A9DDE0] block">For More Details</span>
+              <a href="tel:+918200014314" class="text-white font-medium hover:text-[#A9DDE0] transition-colors">+91 8200014314</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="overline text-white">The Local Dispatch</h5>
+          <p class="body-sm text-[#D7DEFF] leading-relaxed">
+            Insights on regional marketing, creator discovery, and neighbourhood launch strategies.
+          </p>
+          <form class="newsletter-form flex gap-2">
+            <input required class="input-curvy-dark" placeholder="your@business.com" type="email" />
+            <button type="submit" class="btn-pill-primary btn-pill-sm px-4" aria-label="Subscribe">
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </button>
+          </form>
+        </div>
+
       </div>
 
-    </div>
+      <div class="mt-12 pt-8 border-t border-[#374151] flex flex-col md:flex-row justify-between items-center body-sm text-[#9CA3AF]">
+        <p>© 2026 Huttingdon. All rights reserved.</p>
+        <p class="mt-3 md:mt-0 font-light">Regional Creator Marketing</p>
+      </div>
+    </footer>
 
-    <div
-      class="max-w-[1200px] mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-[#555555]">
-      <p>© 2026 Huttingdon. All rights reserved.</p>
-      <p class="mt-4 md:mt-0 font-light">Regional Creator Marketing</p>
-    </div>
-  </footer>
+  </main>
 
-  <!-- Modal: Plan My Launch -->
+  <!-- Modal: Plan My Launch / Consultation -->
   <div id="consultation-modal" class="modal-overlay">
     <div class="modal-container p-8 md:p-10">
-      <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+      <div class="flex justify-between items-start mb-6 border-b border-[#374151] pb-4">
         <div>
-          <span class="text-xs text-[#888888] uppercase tracking-wider font-medium">Local Campaign Planning</span>
-          <h3 class="font-serif text-2xl text-white mt-1">Plan My Launch</h3>
+          <span class="overline text-[#A9DDE0] block">Regional Creator Marketing</span>
+          <h3 class="headline-md text-white mt-1">Plan Your Launch</h3>
         </div>
-        <button data-close-modal class="text-[#777777] hover:text-white p-1" aria-label="Close Dialog">
+        <button data-close-modal class="text-[#9CA3AF] hover:text-white p-1" aria-label="Close Dialog">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
       <form id="consultation-form" class="space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Your Name *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="Alex Morgan" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Your Name *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="Alex Morgan" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Email Address *</label>
-            <input required type="email" class="input-curvy-dark text-xs" placeholder="alex@mybusiness.com" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Email Address *</label>
+            <input required type="email" class="input-curvy-dark" placeholder="alex@mybusiness.com" />
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Business / Brand Name *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="e.g. Copper Hearth Bakery" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Business / Brand Name *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="e.g. Copper Hearth Bakery" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Business Category *</label>
-            <select class="input-curvy-dark bg-[#161616] text-white text-xs">
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Business Category *</label>
+            <select class="input-curvy-dark">
               <option value="cafe_restaurant">Restaurant, Café or Bakery</option>
               <option value="salon_beauty">Salon, Spa or Beauty Studio</option>
               <option value="gym_fitness">Gym or Fitness Studio</option>
@@ -403,12 +409,12 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">City &amp; Neighbourhood / Area *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="e.g. Indiranagar, Bangalore" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">City &amp; Neighbourhood / Area *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="e.g. Indiranagar, Bangalore" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">The Moment / Objective *</label>
-            <select class="input-curvy-dark bg-[#161616] text-white text-xs">
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">The Moment / Objective *</label>
+            <select class="input-curvy-dark">
               <option value="grand_opening">Grand Opening / New Outlet Launch</option>
               <option value="new_product_menu">New Menu or Product Launch</option>
               <option value="footfall_awareness">Drive Local Footfall &amp; Awareness</option>
@@ -418,14 +424,13 @@
           </div>
         </div>
         <div>
-          <label class="text-xs text-[#999999] block mb-1.5 font-medium">Tell Us About Your Launch &amp; Target
-            Timeline</label>
-          <textarea rows="3" class="input-curvy-dark text-xs"
+          <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Tell Us About Your Launch &amp; Target Timeline</label>
+          <textarea rows="3" class="input-curvy-dark"
             placeholder="When are you launching, who are you hoping to reach, and what makes your business special?"></textarea>
         </div>
-        <div class="pt-2 flex justify-end gap-3">
-          <button type="button" data-close-modal class="btn-pill-glass text-xs py-2 px-5">Cancel</button>
-          <button type="submit" class="btn-pill-dark text-xs py-2 px-6">Plan My Launch</button>
+        <div class="pt-3 flex justify-end gap-3">
+          <button type="button" data-close-modal class="btn-pill-secondary btn-pill-sm">Cancel</button>
+          <button type="submit" class="btn-pill-primary btn-pill-sm">Plan My Launch</button>
         </div>
       </form>
     </div>

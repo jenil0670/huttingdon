@@ -13,26 +13,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN with Influential Design System Tokens -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            "dark-base": "#090909",
-            "dark-surface": "#141414",
-            "light-base": "#ffffff",
-            "light-surface": "#f9f9fa"
+            primary: "#1866FE",
+            "primary-dark": "#0B2DFF",
+            secondary: "#A9DDE0",
+            tertiary: "#E0E0E099",
+            neutral: "#333333",
+            surface: "#FFFFFF",
+            "on-surface": "#FFFFFF",
+            "muted-surface": "#BFE7E9",
+            border: "#374151",
+            "text-muted": "#D7DEFF",
+            error: "#E64646"
           },
           fontFamily: {
-            sans: ["'Plus Jakarta Sans'", "-apple-system", "sans-serif"],
-            serif: ["'Playfair Display'", "serif"]
+            display: ["'GT America Extended'", "'Space Grotesk'", "-apple-system", "sans-serif"],
+            sans: ["'GT America'", "'Plus Jakarta Sans'", "-apple-system", "sans-serif"]
+          },
+          borderRadius: {
+            sm: "4px",
+            md: "8px",
+            lg: "12px",
+            xl: "24px",
+            "2xl": "32px",
+            full: "9999px"
           }
         }
       }
@@ -41,18 +56,19 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="bg-[#090909] text-white selection:bg-white selection:text-black">
+<body class="bg-[#A9DDE0] text-[#333333] antialiased selection:bg-[#1866FE] selection:text-white">
 
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress"></div>
 
-  <!-- Frosted Glass Floating Navbar with Animated Logo -->
+  <!-- Influential Floating Pill Navbar -->
   <div class="navbar-frosted-container">
     <header class="navbar-frosted flex justify-between items-center">
       <!-- Animated Logo Branding on the Left -->
       <a href="index.html" class="flex items-center group">
-        <div class="logo-animated flex items-center justify-center"><img src="assets/new-logo.png" alt="Huttingdon Logo"
-            class="h-8 md:h-10 w-auto object-contain" /></div>
+        <div class="logo-animated flex items-center justify-center">
+          <img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-8 md:h-9 w-auto object-contain" />
+        </div>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -65,7 +81,7 @@
 
       <!-- Action Button -->
       <div class="hidden md:flex items-center">
-        <button data-open-modal="consultation-modal" class="btn-pill-dark text-xs py-2 px-5">
+        <button data-open-modal="consultation-modal" class="btn-pill-primary btn-pill-sm">
           Create Local Buzz
         </button>
       </div>
@@ -79,198 +95,166 @@
 
   <!-- Mobile Navigation Drawer -->
   <div id="mobile-nav-overlay" class="mobile-nav-overlay md:hidden">
-    <div class="flex justify-between items-center border-b border-white/10 pb-6">
-      <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon"
-          class="h-8 w-auto object-contain" /></div>
+    <div class="flex justify-between items-center border-b border-[#374151] pb-6">
+      <div class="flex items-center">
+        <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+      </div>
       <button id="close-mobile-nav" class="text-white p-2" aria-label="Close Menu">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
-    <div class="flex flex-col space-y-7 my-auto">
-      <a href="index.html" class="text-3xl font-medium text-white">Home</a>
-      <a href="creators.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">For
-        Creators</a>
-      <a href="about.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">About</a>
-      <a href="contact.html" class="text-3xl font-medium text-[#888888] hover:text-white transition-colors">Contact</a>
+    <div class="flex flex-col space-y-6 my-auto">
+      <a href="index.html" class="headline-md text-white">Home</a>
+      <a href="creators.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">For Creators</a>
+      <a href="about.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">About</a>
+      <a href="contact.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">Contact</a>
     </div>
-    <div class="flex flex-col gap-3 pt-6 border-t border-white/10">
-      <button data-open-modal="consultation-modal" class="btn-pill-dark w-full justify-center">Create Local
+    <div class="flex flex-col gap-3 pt-6 border-t border-[#374151]">
+      <button data-open-modal="consultation-modal" class="btn-pill-primary w-full justify-center">Create Local
         Buzz</button>
-      <a href="creators.html" class="btn-pill-glass w-full justify-center text-center">Join Creator Network</a>
+      <a href="creators.html" class="btn-pill-secondary w-full justify-center text-center">Join Creator Network</a>
     </div>
   </div>
 
-  <main class="flex-grow">
+  <main class="content-canvas mt-4 md:mt-6 space-y-8 md:space-y-12">
 
     <!-- =========================================
-         SECTION 1: HERO (BLACK BACKGROUND)
+         SECTION 1: HERO (ELECTRIC BLUE #1866FE PANEL)
          Huttingdon = Local + Influencers + Buzz
          ========================================= -->
-    <section
-      class="section-dark min-h-[90vh] flex flex-col justify-between pt-24 md:pt-36 pb-20 md:pb-28 relative overflow-hidden">
-      <!-- Fitted Background Layer Covering Full Black Area (15% - 30% Opacity) -->
+    <section class="hero-surface-blue pt-16 md:pt-28 pb-12 md:pb-16 px-6 sm:px-10 md:px-16 text-center">
+      <!-- Fitted Background Layer Covering Full Blue Area -->
       <div class="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden"
         aria-hidden="true">
         <img src="assets/hero-bg.jpg" alt="Huttingdon Local Creator Production Setup" class="hero-bg-cover" />
         <div class="hero-bg-overlay"></div>
       </div>
 
-      <div class="max-w-[1200px] mx-auto px-6 md:px-12 w-full space-y-16 relative z-10">
+      <div class="max-w-4xl mx-auto space-y-7 relative z-10 reveal">
+        <!-- Main Headline -->
+        <h1 class="headline-display text-white font-medium max-w-4xl mx-auto">
+          Turning local businesses into local buzz &amp; local buzz into your growth.
+        </h1>
 
-        <!-- Top Hero Copy -->
-        <div class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-7 reveal">
+        <!-- Supporting Copy -->
+        <p class="body-lg text-[#D7DEFF] max-w-2xl mx-auto leading-relaxed">
+          We connect local businesses with regional creators to create real-world awareness, excitement, and
+          conversations where it actually matters — nearby.
+        </p>
 
-
-
-          <!-- Main Headline -->
-          <h1
-            class="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.18] tracking-tight text-white max-w-5xl mx-auto">
-            <span class="block">Turning local businesses into local buzz</span>
-            <span class="block">&amp; local buzz into</span>
-            <span class="block italic font-serif">your growth.</span>
-          </h1>
-
-          <!-- Supporting Copy -->
-          <p class="text-base sm:text-lg md:text-xl text-[#999999] font-light max-w-2xl leading-relaxed">
-            We connect local businesses with regional creators to create real-world awareness, excitement, and
-            conversations where it actually matters — nearby.
-          </p>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
-            <button data-open-modal="consultation-modal" class="btn-pill-dark">
-              Create Local Buzz
-              <span class="material-symbols-outlined text-base">arrow_forward</span>
-            </button>
-            <a href="creators.html" class="btn-pill-glass">
-              Join Creator Network
-            </a>
-          </div>
-
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap justify-center items-center gap-4 pt-3">
+          <button data-open-modal="consultation-modal"
+            class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
+            Create Local Buzz
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+          <a href="creators.html" class="btn-pill-secondary">
+            Join Creator Network
+          </a>
         </div>
       </div>
 
       <!-- Trust Strip Ticker (Core Strategic Anchors) -->
-      <div class="mt-20 pt-8 border-t border-white/5 overflow-hidden select-none relative z-10">
-        <div
-          class="marquee-smooth flex items-center gap-14 text-xs uppercase tracking-widest text-[#777777] font-medium">
-          <span class="text-white/90">Huttingdon = Local + Influencers + Buzz</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Relevance Over Reach</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Local Over Generic</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Influence Over Impressions</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Strategy Over Follower Count</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Attention Over Noise</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">Make People Nearby Care</span>
-          <span class="opacity-30">•</span>
-          <span class="text-white/90">From Business to Buzz</span>
+      <div class="mt-16 md:mt-24 pt-8 border-t border-white/20 overflow-hidden select-none relative z-10">
+        <div class="marquee-smooth flex items-center gap-12 overline text-[#D7DEFF]">
+          <span class="text-white font-semibold">Huttingdon = Local + Influencers + Buzz</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Relevance Over Reach</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Local Over Generic</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Influence Over Impressions</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Strategy Over Follower Count</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Attention Over Noise</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">Make People Nearby Care</span>
+          <span class="opacity-40">•</span>
+          <span class="text-white font-semibold">From Business to Buzz</span>
         </div>
       </div>
-
     </section>
 
     <!-- =========================================
          SECTION 2: THE STAKES (EDITORIAL STORYTELLING)
          How Many Customers Are You Losing Without Local Attention?
          ========================================= -->
-    <section id="stakes" class="section-light py-24 md:py-36 relative overflow-hidden">
-      <!-- Subtle curved background shape at bottom-left as in reference image -->
-      <div
-        class="absolute -bottom-28 -left-28 w-[420px] h-[420px] bg-black/[0.025] rounded-full pointer-events-none blur-2xl">
-      </div>
-
-      <div class="max-w-[760px] mx-auto px-6 md:px-8 relative z-10 reveal">
-
+    <section id="stakes" class="surface-clean-white py-16 md:py-24 px-6 sm:px-12 md:px-16">
+      <div class="max-w-[760px] mx-auto relative z-10 reveal">
         <!-- Main Headline (Centered) -->
-        <h2
-          class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold text-[#090909] text-center leading-[1.22] tracking-tight mb-10 sm:mb-14">
+        <h2 class="headline-lg text-[#333333] text-center mb-10 md:mb-14">
           How Many Customers Are You Losing <br class="hidden sm:inline" />
           Without Local Attention?
         </h2>
 
         <!-- Key Stakes (Editorial Bullet Points) -->
-        <ul class="space-y-4 sm:space-y-5 text-left max-w-2xl mx-auto">
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+        <ul class="space-y-5 text-left max-w-2xl mx-auto">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">People
-              nearby don't even know you exist.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">People nearby don't even know you exist.</span>
           </li>
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">Potential
-              customers discover competitors simply because they heard about them first.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">Potential customers discover competitors simply because
+              they heard about them first.</span>
           </li>
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">New outlets
-              struggle to build momentum and attract attention.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">New outlets struggle to build momentum and attract
+              attention.</span>
           </li>
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">Marketing
-              spends generate views without creating meaningful local attention.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">Marketing spends generate views without creating
+              meaningful local attention.</span>
           </li>
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">Your
-              business misses opportunities to become part of local conversations.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">Your business misses opportunities to become part of
+              local conversations.</span>
           </li>
-          <li class="flex items-start gap-3.5 sm:gap-4 group">
+          <li class="flex items-start gap-4 group">
             <span
-              class="w-2 h-2 rounded-full bg-[#090909] mt-2.5 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
-            <span class="text-[#222222] text-base sm:text-lg md:text-[1.125rem] leading-relaxed font-light">Less local
-              attention means fewer opportunities to turn awareness into customers.</span>
+              class="w-2.5 h-2.5 rounded-full bg-[#1866FE] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></span>
+            <span class="body-lg text-[#333333] leading-relaxed">Less local attention means fewer opportunities to turn
+              awareness into customers.</span>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- =========================================
-         SECTION 3: WHEN ATTENTION MATTERS MOST (BLACK BACKGROUND)
+         SECTION 3: WHEN ATTENTION MATTERS MOST (NEUTRAL DARK #333333 PANEL)
          Core Moments: Openings, Launches, Events, Visibility
          ========================================= -->
-    <section id="moments-buzz-section" class="section-dark-curved py-24 md:py-32 relative overflow-hidden">
-      <!-- Ambient subtle background aura -->
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-white/[0.02] rounded-full blur-3xl pointer-events-none">
-      </div>
-
-      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 relative z-10">
-
-        <!-- Unified Section Header (Centered on Top, NO Short Description Below It) -->
+    <section id="moments-buzz-section" class="surface-neutral-dark py-16 md:py-24 px-6 sm:px-10 md:px-16">
+      <div class="relative z-10">
+        <!-- Unified Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
-          <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#888888] block mb-3">Local
-            Market Catalysts</span>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white leading-tight">
-            Built for the moments that <br />
-            <span class="italic font-serif">demand local buzz.</span>
+          <span class="overline text-[#A9DDE0] block mb-3">Local Market Catalysts</span>
+          <h2 class="headline-lg text-white">
+            Built for the moments that demand local buzz.
           </h2>
         </div>
 
-        <!-- Equal-Spaced Layout: 1/4th Vertical Morphing Blob (3 cols) + 3/4th 4 Moment Cards (9 cols) -->
+        <!-- Equal-Spaced Layout: Morphing Blob (3 cols) + 4 Moment Cards (9 cols) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-stretch">
 
-          <!-- 1/4TH VERTICAL PORTION: DYNAMIC MORPHING BLOB SHOWCASE (25% Width) -->
+          <!-- 1/4th Vertical Morphing Blob Showcase -->
           <div class="lg:col-span-3 flex justify-center items-center">
             <div class="buzz-blob-showcase flex flex-col items-center justify-center w-full">
-
               <div class="buzz-showcase-box relative">
-                <!-- Radial Glow Behind the Blob -->
-                <div class="absolute inset-0 bg-white/[0.03] rounded-full blur-2xl pointer-events-none scale-105"></div>
+                <div class="absolute inset-0 bg-[#1866FE]/10 rounded-full blur-xl pointer-events-none scale-105"></div>
 
-                <!-- Continuous Morphing Image Container (Initially hidden until border finishes drawing) -->
+                <!-- Continuous Morphing Image Container -->
                 <div id="buzz-blob-container" class="buzz-blob-container select-none">
-
                   <!-- Slide 0: Cafés, Bakeries & Dining -->
                   <div class="buzz-slide active" data-buzz-index="0" data-buzz-tag="DINING &amp; HOSPITALITY">
                     <img src="assets/buzz-dining.jpg" alt="Cafés, Bakeries &amp; Dining moment" class="buzz-img" />
@@ -298,39 +282,28 @@
                   <!-- Frosted Floating Capsule Badge Inside Blob -->
                   <div class="buzz-blob-badge">
                     <div class="flex items-center gap-2 overflow-hidden">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
-                      <span id="buzz-badge-label"
-                        class="text-[10px] font-mono uppercase tracking-wider text-white/90 font-medium truncate">DINING
-                        &amp; HOSPITALITY</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#1866FE] animate-pulse flex-shrink-0"></span>
+                      <span id="buzz-badge-label" class="label-sm text-white font-medium truncate">DINING &amp;
+                        HOSPITALITY</span>
                     </div>
-                    <span id="buzz-badge-counter" class="text-[9px] font-mono text-white/60 pl-2">01 / 04</span>
+                    <span id="buzz-badge-counter" class="text-[10px] font-mono text-[#D7DEFF] pl-2">01 / 04</span>
                   </div>
-
                 </div>
 
-                <!-- SVG Overlay for Scroll-Triggered Active Line Drawing Effect (100% Geometrically Aligned) -->
+                <!-- SVG Overlay for Scroll-Triggered Active Line Drawing Effect -->
                 <svg id="buzz-drawing-svg" class="buzz-drawing-svg" viewBox="0 0 280 380" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="buzzStrokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-                      <stop offset="50%" stop-color="#e2e8f0" stop-opacity="0.85" />
-                      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+                      <stop offset="0%" stop-color="#1866FE" stop-opacity="1" />
+                      <stop offset="50%" stop-color="#A9DDE0" stop-opacity="0.9" />
+                      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.95" />
                     </linearGradient>
-                    <filter id="buzzStrokeGlow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="3.5" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
                   </defs>
                   <path id="buzz-drawing-path"
                     d="M 168 1 A 111 113 0 0 1 279 114 A 83 265 0 0 1 196 379 A 195 151 0 0 1 1 228 A 167 227 0 0 1 168 1 Z"
-                    stroke="url(#buzzStrokeGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    filter="url(#buzzStrokeGlow)" />
+                    stroke="url(#buzzStrokeGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-
               </div>
 
               <!-- Interactive Progress Navigation Dots -->
@@ -344,94 +317,74 @@
                 <button type="button" class="buzz-dot" data-buzz-dot="3"
                   aria-label="Moment 4: Studios &amp; Wellness"></button>
               </div>
-
             </div>
           </div>
 
-          <!-- 3/4TH PORTION: 4 MOMENT CARDS COMPRESSED WITH EQUAL SPACING (75% Width) -->
+          <!-- 3/4th Portion: 4 Moment Cards with 1px border & md/lg rounding -->
           <div class="lg:col-span-9 flex items-center">
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-4.5 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 w-full">
 
               <!-- Moment 1: Cafés & Restaurants -->
               <div data-buzz-target="0"
-                class="floating-stack-dark p-4 sm:p-5 md:p-6 space-y-3 reveal rounded-2xl sm:rounded-[28px] cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
+                class="card-dark p-6 space-y-3 reveal cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
                 <div class="space-y-3">
-                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined text-base sm:text-lg">restaurant</span>
+                  <div class="w-10 h-10 rounded-full bg-[#1866FE] flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">restaurant</span>
                   </div>
-                  <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-[#888888] block">DINING
-                    &amp;
-                    HOSPITALITY</span>
-                  <h3 class="font-serif text-sm sm:text-base md:text-lg text-white font-normal leading-snug">Cafés,
-                    Bakeries
-                    &amp; Dining</h3>
+                  <span class="overline text-[#A9DDE0] block">DINING &amp; HOSPITALITY</span>
+                  <h3 class="headline-sm text-white font-medium">Cafés, Bakeries &amp; Dining</h3>
                 </div>
-                <p class="text-[11px] sm:text-xs text-[#999999] font-light leading-relaxed pt-1">
+                <p class="body-sm text-[#D7DEFF] font-light leading-relaxed pt-2">
                   Curated first-look tastings and atmosphere walkthroughs that give neighbourhood food lovers a reason
-                  to
-                  step out this weekend.
+                  to step out this weekend.
                 </p>
               </div>
 
               <!-- Moment 2: Retail & Outlets -->
               <div data-buzz-target="1"
-                class="floating-stack-dark p-4 sm:p-5 md:p-6 space-y-3 reveal reveal-delay-1 rounded-2xl sm:rounded-[28px] cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
+                class="card-dark p-6 space-y-3 reveal reveal-delay-1 cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
                 <div class="space-y-3">
-                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined text-base sm:text-lg">storefront</span>
+                  <div class="w-10 h-10 rounded-full bg-[#1866FE] flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">storefront</span>
                   </div>
-                  <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-[#888888] block">RETAIL
-                    &amp;
-                    STORES</span>
-                  <h3 class="font-serif text-sm sm:text-base md:text-lg text-white font-normal leading-snug">New Outlets
-                    &amp;
-                    Store Debuts</h3>
+                  <span class="overline text-[#A9DDE0] block">RETAIL &amp; STORES</span>
+                  <h3 class="headline-sm text-white font-medium">New Outlets &amp; Store Debuts</h3>
                 </div>
-                <p class="text-[11px] sm:text-xs text-[#999999] font-light leading-relaxed pt-1">
+                <p class="body-sm text-[#D7DEFF] font-light leading-relaxed pt-2">
                   Introduce your new address across the district with try-on styling sessions, opening perks, and
-                  organic
-                  customer UGC.
+                  organic customer UGC.
                 </p>
               </div>
 
               <!-- Moment 3: Pop-Ups & Events -->
               <div data-buzz-target="2"
-                class="floating-stack-dark p-4 sm:p-5 md:p-6 space-y-3 reveal reveal-delay-2 rounded-2xl sm:rounded-[28px] cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
+                class="card-dark p-6 space-y-3 reveal reveal-delay-2 cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
                 <div class="space-y-3">
-                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined text-base sm:text-lg">celebration</span>
+                  <div class="w-10 h-10 rounded-full bg-[#1866FE] flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">celebration</span>
                   </div>
-                  <span
-                    class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-[#888888] block">EXPERIENCES</span>
-                  <h3 class="font-serif text-sm sm:text-base md:text-lg text-white font-normal leading-snug">Events,
-                    Pop-Ups
-                    &amp; Festivals</h3>
+                  <span class="overline text-[#A9DDE0] block">EXPERIENCES</span>
+                  <h3 class="headline-sm text-white font-medium">Events, Pop-Ups &amp; Festivals</h3>
                 </div>
-                <p class="text-[11px] sm:text-xs text-[#999999] font-light leading-relaxed pt-1">
+                <p class="body-sm text-[#D7DEFF] font-light leading-relaxed pt-2">
                   Targeted anticipation drops and real-time coverage that sell out ticket waves and eliminate empty
-                  hours
-                  during your event.
+                  hours during your event.
                 </p>
               </div>
 
               <!-- Moment 4: Studios & Local Brands -->
               <div data-buzz-target="3"
-                class="floating-stack-dark p-4 sm:p-5 md:p-6 space-y-3 reveal reveal-delay-3 rounded-2xl sm:rounded-[28px] cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
+                class="card-dark p-6 space-y-3 reveal reveal-delay-3 cursor-pointer transition-all duration-300 h-full flex flex-col justify-between">
                 <div class="space-y-3">
-                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/5 flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined text-base sm:text-lg">fitness_center</span>
+                  <div class="w-10 h-10 rounded-full bg-[#1866FE] flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">fitness_center</span>
                   </div>
-                  <span
-                    class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-[#888888] block">COMMUNITY
-                    SPOTS</span>
-                  <h3 class="font-serif text-sm sm:text-base md:text-lg text-white font-normal leading-snug">Studios,
-                    Salons
-                    &amp; Wellness</h3>
+                  <span class="overline text-[#A9DDE0] block">COMMUNITY SPOTS</span>
+                  <h3 class="headline-sm text-white font-medium">Studios, Salons &amp; Wellness</h3>
                 </div>
-                <p class="text-[11px] sm:text-xs text-[#999999] font-light leading-relaxed pt-1">
+                <p class="body-sm text-[#D7DEFF] font-light leading-relaxed pt-2">
                   Pre-launch founding member drives and routine spotlights that build genuine local community
-                  credibility
-                  before opening.
+                  credibility before opening.
                 </p>
               </div>
 
@@ -439,279 +392,266 @@
           </div>
 
         </div>
-
       </div>
     </section>
 
     <!-- =========================================
-         SECTION 4: WORKING WITH HUTTINGDON (BLACK BACKGROUND / WHITE ICONS)
+         SECTION 4: WORKING WITH HUTTINGDON (CLEAN WHITE #FFFFFF PANEL)
          3 Items Per Row (Same on Mobile)
          ========================================= -->
-    <section id="benefits" class="section-benefits py-20 md:py-32">
-      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12">
+    <section id="benefits" class="surface-clean-white py-16 md:py-24 px-6 sm:px-10 md:px-16">
+      <div class="relative z-10 reveal">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <h2 class="headline-lg text-[#333333]">
+            Working with Huttingdon, you get:
+          </h2>
+        </div>
 
-        <!-- Dark Canvas with subtle glassmorphism to let glowing gradient mesh shine through -->
-        <div
-          class="bg-[#0e0e0e]/60 backdrop-blur-md text-white rounded-[28px] sm:rounded-[44px] p-5 sm:p-10 md:p-14 border border-white/10 shadow-2xl relative overflow-hidden reveal">
+        <!-- 3 Items Per Horizontal Row Grid -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 mb-12">
 
-          <!-- Section Header -->
-          <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-
-            <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-white leading-tight">
-              Working with Huttingdon, <br class="hidden sm:inline" />
-              <span class="italic font-serif">you get:</span>
-            </h2>
+          <!-- Benefit 1: Affordable Influencer Campaigns -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">account_balance_wallet</span>
+            </div>
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Affordable Influencer Campaigns
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Cost-effective regional creator partnerships structured for local business budgets without agency markups.
+            </p>
           </div>
 
-          <!-- 3 Items Per Horizontal Row Grid (Fixed 3-Columns for Both Desktop & Mobile) -->
-          <div class="grid grid-cols-3 gap-2.5 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
-
-            <!-- Benefit 1: Affordable Influencer Campaigns -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">account_balance_wallet</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Affordable Influencer Campaigns
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Cost-effective regional creator partnerships structured for local business budgets without agency
-                markups.
-              </p>
+          <!-- Benefit 2: Relevant Local Audiences -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">near_me</span>
             </div>
-
-            <!-- Benefit 2: Relevant Local Audiences -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">near_me</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Relevant Local Audiences
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Targeted attention from residents living, working, and spending within your immediate 5km catchment.
-              </p>
-            </div>
-
-            <!-- Benefit 3: Local Buzz -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">local_fire_department</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Local Buzz
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Turn launches, debuts, and everyday moments into neighborhood talk, packed tables, and active
-                word-of-mouth.
-              </p>
-            </div>
-
-            <!-- Benefit 4: Creator-Led Discovery -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">verified</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Creator-Led Discovery
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Authentic, natural recommendations from regional voices your community already follows and trusts.
-              </p>
-            </div>
-
-            <!-- Benefit 5: Campaign Strategy -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">query_stats</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Campaign Strategy
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Seamless launch scheduling, bespoke creator briefs, and complete end-to-end execution handled for you.
-              </p>
-            </div>
-
-            <!-- Benefit 6: Growth Opportunities -->
-            <div class="flex flex-col items-center text-center p-1.5 sm:p-4 group">
-              <div
-                class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white text-[#111111] mx-auto flex items-center justify-center shadow-lg mb-2.5 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
-                <span class="material-symbols-outlined text-lg sm:text-2xl text-[#111111]">trending_up</span>
-              </div>
-              <h3
-                class="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white text-center mb-1.5 sm:mb-2 leading-snug">
-                Growth Opportunities
-              </h3>
-              <p class="text-[9px] sm:text-xs text-[#999999] font-light text-center leading-tight sm:leading-relaxed">
-                Transform initial local curiosity into recurring regulars, compounding brand loyalty, and sustained
-                growth.
-              </p>
-            </div>
-
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Relevant Local Audiences
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Targeted attention from residents living, working, and spending within your immediate 5km catchment.
+            </p>
           </div>
 
-          <!-- Bottom CTA -->
-          <div class="text-center pt-2 sm:pt-4 border-t border-white/5">
-            <button data-open-modal="consultation-modal" class="btn-pill-dark text-xs sm:text-sm py-3 px-8">
-              Create Local Buzz
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
+          <!-- Benefit 3: Local Buzz -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">local_fire_department</span>
+            </div>
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Local Buzz
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Turn launches, debuts, and everyday moments into neighborhood talk, packed tables, and active
+              word-of-mouth.
+            </p>
+          </div>
+
+          <!-- Benefit 4: Creator-Led Discovery -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">verified</span>
+            </div>
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Creator-Led Discovery
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Authentic, natural recommendations from regional voices your community already follows and trusts.
+            </p>
+          </div>
+
+          <!-- Benefit 5: Campaign Strategy -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">query_stats</span>
+            </div>
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Campaign Strategy
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Seamless launch scheduling, bespoke creator briefs, and complete end-to-end execution handled for you.
+            </p>
+          </div>
+
+          <!-- Benefit 6: Growth Opportunities -->
+          <div class="flex flex-col items-center text-center p-2 sm:p-4 group">
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#1866FE] text-white mx-auto flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined text-xl sm:text-2xl">trending_up</span>
+            </div>
+            <h3
+              class="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-[#333333] text-center mb-1.5 sm:mb-2 leading-snug">
+              Growth Opportunities
+            </h3>
+            <p class="body-sm text-[#555555] text-center leading-tight sm:leading-relaxed">
+              Transform initial local curiosity into recurring regulars, compounding brand loyalty, and sustained
+              growth.
+            </p>
           </div>
 
         </div>
 
+        <!-- Bottom CTA -->
+        <div class="text-center pt-6 border-t border-[#374151]/15">
+          <button data-open-modal="consultation-modal" class="btn-pill-primary">
+            Create Local Buzz
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- =========================================
-         SECTION 5: FINAL CALL TO ACTION (BLACK BACKGROUND)
+         SECTION 5: FINAL CALL TO ACTION (ELECTRIC BLUE #1866FE PANEL)
          Make Your Local Launch Impossible to Miss
          ========================================= -->
-    <section class="section-dark-curved py-28 md:py-36 text-center">
-      <div class="max-w-[900px] mx-auto px-6 md:px-12 space-y-8 reveal">
-
-
-
-        <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white leading-tight">
-          Make your local launch <br />
-          <span class="italic font-serif">impossible to miss.</span>
+    <section class="hero-surface-blue py-16 md:py-24 px-6 sm:px-10 md:px-16 text-center">
+      <div class="max-w-3xl mx-auto space-y-7 relative z-10 reveal">
+        <h2 class="headline-display text-white">
+          Make your local launch impossible to miss.
         </h2>
 
-        <p class="text-base sm:text-lg text-[#999999] font-light max-w-xl mx-auto leading-relaxed">
+        <p class="body-lg text-[#D7DEFF] max-w-xl mx-auto leading-relaxed">
           Tell us what you're opening, introducing, or hosting. We'll connect you with the regional creators who can
           turn your launch into local buzz.
         </p>
 
-        <div class="pt-4 flex flex-wrap justify-center gap-4">
-          <button data-open-modal="consultation-modal" class="btn-pill-dark">
+        <div class="pt-3 flex flex-wrap justify-center gap-4">
+          <button data-open-modal="consultation-modal"
+            class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
             Create Local Buzz
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
-          <a href="creators.html" class="btn-pill-glass">
+          <a href="creators.html" class="btn-pill-secondary">
             Join Creator Network
           </a>
         </div>
-
       </div>
     </section>
 
-  </main>
+    <!-- =========================================
+         FOOTER (NEUTRAL DARK #333333)
+         ========================================= -->
+    <footer class="footer-neutral">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
 
-  <!-- Minimalist Black & White Footer -->
-  <footer class="bg-[#090909] text-white border-t border-white/5 pt-20 pb-12">
-    <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12">
-
-      <!-- Col 1: Brand Info -->
-      <div class="md:col-span-4 space-y-5">
-        <div class="flex items-center"><img src="assets/new-logo.png" alt="Huttingdon"
-            class="h-8 w-auto object-contain" /></div>
-        <p class="text-sm text-[#888888] max-w-sm font-light leading-relaxed">
-          Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine
-          influence in their communities.
-        </p>
-        <div class="text-xs text-[#666666] font-mono uppercase tracking-wider">
-          Huttingdon = Local + Influencers + Buzz
+        <!-- Col 1: Brand Info -->
+        <div class="md:col-span-4 space-y-5">
+          <div class="flex items-center">
+            <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+          </div>
+          <p class="body-sm text-[#D7DEFF] max-w-sm font-light leading-relaxed">
+            Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine
+            influence in their communities.
+          </p>
+          <div class="overline text-[#A9DDE0]">
+            Huttingdon = Local + Influencers + Buzz
+          </div>
         </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="md:col-span-2 space-y-4">
+          <h5 class="overline text-white">Navigation</h5>
+          <ul class="space-y-2.5 body-sm">
+            <li><a href="index.html" class="text-white hover:text-[#A9DDE0] transition-colors">Home</a></li>
+            <li><a href="creators.html" class="text-[#D7DEFF] hover:text-white transition-colors">For Creators</a></li>
+            <li><a href="about.html" class="text-[#D7DEFF] hover:text-white transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-[#D7DEFF] hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Inquiries -->
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="overline text-white">Contact &amp; Inquiries</h5>
+          <ul class="space-y-3 body-sm">
+            <li>
+              <span class="label-sm text-[#A9DDE0] block">Campaign Strategy</span>
+              <a href="mailto:influence@huttingdon.com"
+                class="text-[#D7DEFF] hover:text-white transition-colors">influence@huttingdon.com</a>
+            </li>
+            <li>
+              <span class="label-sm text-[#A9DDE0] block">Creator Partnerships</span>
+              <a href="mailto:creators@huttingdon.com"
+                class="text-[#D7DEFF] hover:text-white transition-colors">creators@huttingdon.com</a>
+            </li>
+            <li class="pt-1">
+              <span class="label-sm text-[#A9DDE0] block">For More Details</span>
+              <a href="tel:+918200014314" class="text-white font-medium hover:text-[#A9DDE0] transition-colors">+91
+                8200014314</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="overline text-white">The Local Dispatch</h5>
+          <p class="body-sm text-[#D7DEFF] leading-relaxed">
+            Insights on regional marketing, creator discovery, and neighbourhood launch strategies.
+          </p>
+          <form class="newsletter-form flex gap-2">
+            <input required class="input-curvy-dark" placeholder="your@business.com" type="email" />
+            <button type="submit" class="btn-pill-primary btn-pill-sm px-4" aria-label="Subscribe">
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </button>
+          </form>
+        </div>
+
       </div>
 
-      <!-- Col 2: Navigation -->
-      <div class="md:col-span-2">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Navigation</h5>
-        <ul class="space-y-3 text-sm font-light">
-          <li><a href="index.html" class="text-white hover:text-white transition-colors">Home</a></li>
-          <li><a href="creators.html" class="text-[#888888] hover:text-white transition-colors">For Creators</a></li>
-          <li><a href="about.html" class="text-[#888888] hover:text-white transition-colors">About Us</a></li>
-          <li><a href="contact.html" class="text-[#888888] hover:text-white transition-colors">Contact</a></li>
-        </ul>
+      <div
+        class="mt-12 pt-8 border-t border-[#374151] flex flex-col md:flex-row justify-between items-center body-sm text-[#9CA3AF]">
+        <p>© 2026 Huttingdon. All rights reserved.</p>
+        <p class="mt-3 md:mt-0 font-light">Regional Creator Marketing</p>
       </div>
+    </footer>
 
-      <!-- Col 3: Contact & Inquiries -->
-      <div class="md:col-span-3">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">Contact & Inquiries</h5>
-        <ul class="space-y-3 text-sm font-light">
-          <li>
-            <span class="text-xs text-[#666666] block">Campaign Strategy</span>
-            <a href="mailto:influence@huttingdon.com"
-              class="text-[#888888] hover:text-white transition-colors">influence@huttingdon.com</a>
-          </li>
-          <li>
-            <span class="text-xs text-[#666666] block">Creator Partnerships</span>
-            <a href="mailto:creators@huttingdon.com"
-              class="text-[#888888] hover:text-white transition-colors">creators@huttingdon.com</a>
-          </li>
-          <li class="pt-1">
-            <span class="text-xs text-[#666666] block">For More Details</span>
-            <a href="tel:+918200014314" class="text-white hover:text-white font-medium transition-colors">+91
-              8200014314</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Newsletter -->
-      <div class="md:col-span-3">
-        <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-6">The Local Dispatch</h5>
-        <p class="text-xs text-[#888888] mb-4 font-light leading-relaxed">
-          Insights on regional marketing, creator discovery, and neighbourhood launch strategies.
-        </p>
-        <form class="newsletter-form flex gap-2">
-          <input required class="input-curvy-dark text-xs py-2.5" placeholder="your@business.com" type="email" />
-          <button type="submit" class="btn-pill-dark text-xs py-2.5 px-4" aria-label="Subscribe">
-            <span class="material-symbols-outlined text-base">arrow_forward</span>
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-    <div
-      class="max-w-[1200px] mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-[#555555]">
-      <p>© 2026 Huttingdon. All rights reserved.</p>
-      <p class="mt-4 md:mt-0 font-light">Regional Creator Marketing</p>
-    </div>
-  </footer>
+  </main>
 
   <!-- Modal: Plan My Launch / Consultation -->
   <div id="consultation-modal" class="modal-overlay">
     <div class="modal-container p-8 md:p-10">
-      <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+      <div class="flex justify-between items-start mb-6 border-b border-[#374151] pb-4">
         <div>
-          <span class="text-xs text-[#888888] uppercase tracking-wider font-medium">Regional Creator Marketing</span>
-          <h3 class="font-serif text-2xl text-white mt-1">Create Local Buzz</h3>
+          <span class="overline text-[#A9DDE0] block">Regional Creator Marketing</span>
+          <h3 class="headline-md text-white mt-1">Create Local Buzz</h3>
         </div>
-        <button data-close-modal class="text-[#777777] hover:text-white p-1" aria-label="Close Dialog">
+        <button data-close-modal class="text-[#9CA3AF] hover:text-white p-1" aria-label="Close Dialog">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
       <form id="consultation-form" class="space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Your Name *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="Alex Morgan" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Your Name *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="Alex Morgan" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Email Address *</label>
-            <input required type="email" class="input-curvy-dark text-xs" placeholder="alex@mybusiness.com" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Email Address *</label>
+            <input required type="email" class="input-curvy-dark" placeholder="alex@mybusiness.com" />
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Business / Brand Name *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="e.g. Copper Hearth Bakery" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Business / Brand Name *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="e.g. Copper Hearth Bakery" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">Business Category *</label>
-            <select class="input-curvy-dark bg-[#161616] text-white text-xs">
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Business Category *</label>
+            <select class="input-curvy-dark">
               <option value="cafe_restaurant">Restaurant, Café or Bakery</option>
               <option value="salon_beauty">Salon, Spa or Beauty Studio</option>
               <option value="gym_fitness">Gym or Fitness Studio</option>
@@ -724,12 +664,12 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">City &amp; Neighbourhood / Area *</label>
-            <input required type="text" class="input-curvy-dark text-xs" placeholder="e.g. Indiranagar, Bangalore" />
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">City &amp; Neighbourhood / Area *</label>
+            <input required type="text" class="input-curvy-dark" placeholder="e.g. Indiranagar, Bangalore" />
           </div>
           <div>
-            <label class="text-xs text-[#999999] block mb-1.5 font-medium">The Moment / Objective *</label>
-            <select class="input-curvy-dark bg-[#161616] text-white text-xs">
+            <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">The Moment / Objective *</label>
+            <select class="input-curvy-dark">
               <option value="grand_opening">Grand Opening / New Outlet Launch</option>
               <option value="new_product_menu">New Menu or Product Launch</option>
               <option value="footfall_awareness">Drive Local Footfall &amp; Awareness</option>
@@ -739,14 +679,14 @@
           </div>
         </div>
         <div>
-          <label class="text-xs text-[#999999] block mb-1.5 font-medium">Tell Us About Your Launch &amp; Target
+          <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Tell Us About Your Launch &amp; Target
             Timeline</label>
-          <textarea rows="3" class="input-curvy-dark text-xs"
+          <textarea rows="3" class="input-curvy-dark"
             placeholder="When are you launching, who are you hoping to reach, and what makes your business special?"></textarea>
         </div>
-        <div class="pt-2 flex justify-end gap-3">
-          <button type="button" data-close-modal class="btn-pill-glass text-xs py-2 px-5">Cancel</button>
-          <button type="submit" class="btn-pill-dark text-xs py-2 px-6">Create Local Buzz</button>
+        <div class="pt-3 flex justify-end gap-3">
+          <button type="button" data-close-modal class="btn-pill-secondary btn-pill-sm">Cancel</button>
+          <button type="submit" class="btn-pill-primary btn-pill-sm">Create Local Buzz</button>
         </div>
       </form>
     </div>
