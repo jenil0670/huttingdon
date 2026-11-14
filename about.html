@@ -45,8 +45,8 @@
             sm: "4px",
             md: "8px",
             lg: "12px",
-            xl: "24px",
-            "2xl": "32px",
+            xl: "20px",
+            "2xl": "28px",
             full: "9999px"
           }
         }
@@ -67,7 +67,7 @@
       <!-- Animated Logo Branding on the Left -->
       <a href="index.html" class="flex items-center group">
         <div class="logo-animated flex items-center justify-center">
-          <img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-8 md:h-9 w-auto object-contain" />
+          <img src="assets/new-logo.png" alt="Huttingdon Logo" class="h-7 sm:h-8 md:h-9 w-auto object-contain" />
         </div>
       </a>
 
@@ -87,7 +87,7 @@
       </div>
 
       <!-- Mobile Hamburger -->
-      <button data-action="toggle-mobile-menu" class="md:hidden text-white p-1" aria-label="Toggle Navigation">
+      <button data-action="toggle-mobile-menu" class="md:hidden text-white p-2 -mr-1 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors" aria-label="Toggle Navigation">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
     </header>
@@ -95,33 +95,33 @@
 
   <!-- Mobile Drawer -->
   <div id="mobile-nav-overlay" class="mobile-nav-overlay md:hidden">
-    <div class="flex justify-between items-center border-b border-[#374151] pb-6">
+    <div class="flex justify-between items-center border-b border-[#374151] pb-5">
       <div class="flex items-center">
-        <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+        <img src="assets/new-logo.png" alt="Huttingdon" class="h-7 w-auto object-contain" />
       </div>
-      <button id="close-mobile-nav" class="text-white p-2" aria-label="Close Menu">
+      <button id="close-mobile-nav" class="text-white p-2 -mr-2 rounded-full hover:bg-white/10" aria-label="Close Menu">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
-    <div class="flex flex-col space-y-6 my-auto">
-      <a href="index.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">Home</a>
-      <a href="creators.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">For Creators</a>
-      <a href="about.html" class="headline-md text-white">About</a>
-      <a href="contact.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors">Contact</a>
+    <div class="flex flex-col space-y-5 my-auto">
+      <a href="index.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors py-1">Home</a>
+      <a href="creators.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors py-1">For Creators</a>
+      <a href="about.html" class="headline-md text-white py-1">About</a>
+      <a href="contact.html" class="headline-md text-[#D7DEFF] hover:text-white transition-colors py-1">Contact</a>
     </div>
-    <div class="flex flex-col gap-3 pt-6 border-t border-[#374151]">
+    <div class="flex flex-col gap-3 pt-5 border-t border-[#374151]">
       <button data-open-modal="consultation-modal" class="btn-pill-primary w-full justify-center">Plan My Launch</button>
       <a href="creators.html" class="btn-pill-secondary w-full justify-center text-center">Join Creator Network</a>
     </div>
   </div>
 
-  <main class="content-canvas mt-4 md:mt-6 space-y-8 md:space-y-12">
+  <main class="content-canvas px-3 sm:px-4 md:px-6 mt-3 sm:mt-4 md:mt-6 space-y-6 sm:space-y-8 md:space-y-12">
 
     <!-- =========================================
          SECTION 1: HERO (ELECTRIC BLUE #1866FE PANEL)
          ========================================= -->
-    <section class="about-hero-bg pt-16 md:pt-28 pb-16 md:pb-24 px-6 sm:px-10 md:px-16 text-center">
-      <div class="max-w-4xl mx-auto space-y-7 relative z-10 reveal">
+    <section class="about-hero-bg pt-12 sm:pt-16 md:pt-28 pb-12 sm:pb-16 md:pb-24 px-5 sm:px-10 md:px-16 text-center">
+      <div class="max-w-4xl mx-auto space-y-5 sm:space-y-7 relative z-10 reveal">
         <h1 class="headline-display text-white font-medium max-w-4xl mx-auto">
           Local businesses deserve local influence.
         </h1>
@@ -131,8 +131,8 @@
           to them.
         </p>
 
-        <div class="pt-3 flex justify-center">
-          <button data-open-modal="consultation-modal" class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
+        <div class="pt-2 sm:pt-3 flex justify-center w-full max-w-xs mx-auto sm:max-w-none">
+          <button data-open-modal="consultation-modal" class="btn-pill-primary w-full sm:w-auto bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white justify-center">
             Plan My Launch
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
@@ -143,11 +143,11 @@
     <!-- =========================================
          SECTION 2: WHY HUTTINGDON EXISTS (CLEAN WHITE #FFFFFF PANEL)
          ========================================= -->
-    <section class="surface-clean-white py-16 md:py-24 px-6 sm:px-10 md:px-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative z-10">
+    <section class="surface-clean-white py-12 sm:py-16 md:py-24 px-5 sm:px-10 md:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start relative z-10">
 
         <!-- Left Column (Narrative) -->
-        <div class="lg:col-span-6 space-y-6 reveal">
+        <div class="lg:col-span-6 space-y-5 sm:space-y-6 reveal">
           <h2 class="headline-lg text-[#333333]">
             Physical businesses compete online, <br />
             <span class="text-[#1866FE]">but customers live in real places.</span>
@@ -164,7 +164,7 @@
             followers turn to them daily for recommendations: <em>"Where should we go? What should we try?"</em>
           </p>
 
-          <div class="p-6 rounded-xl bg-[#BFE7E9] border border-[#374151]/15">
+          <div class="p-5 sm:p-6 rounded-xl bg-[#BFE7E9] border border-[#374151]/15">
             <div class="headline-sm text-[#333333] font-medium mb-2">
               "Huttingdon exists to connect those two worlds."
             </div>
@@ -176,8 +176,8 @@
         </div>
 
         <!-- Right Column (Mission & Ecosystem Cards) -->
-        <div class="lg:col-span-6 space-y-6 reveal reveal-delay-1">
-          <div class="card-light p-8 space-y-3">
+        <div class="lg:col-span-6 space-y-5 sm:space-y-6 reveal reveal-delay-1">
+          <div class="card-light p-6 sm:p-8 space-y-3">
             <span class="overline text-[#1866FE] block">OUR MISSION</span>
             <h3 class="headline-md text-[#333333]">More Relevant Creator Marketing</h3>
             <p class="body-sm text-[#555555] leading-relaxed">
@@ -187,7 +187,7 @@
             </p>
           </div>
 
-          <div class="card-light p-8 space-y-3">
+          <div class="card-light p-6 sm:p-8 space-y-3">
             <span class="overline text-[#1866FE] block">WHAT WE ARE BUILDING</span>
             <h3 class="headline-md text-[#333333]">The Regional Creator Ecosystem</h3>
             <p class="body-sm text-[#555555] leading-relaxed">
@@ -204,20 +204,20 @@
     <!-- =========================================
          SECTION 3: OUR 7 PRINCIPLES (NEUTRAL DARK #333333 PANEL)
          ========================================= -->
-    <section class="surface-neutral-dark py-16 md:py-24 px-6 sm:px-10 md:px-16">
-      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-        <span class="overline text-[#A9DDE0] block mb-3">Our Guiding North Star</span>
+    <section class="surface-neutral-dark py-12 sm:py-16 md:py-24 px-5 sm:px-10 md:px-16">
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+        <span class="overline text-[#A9DDE0] block mb-2 sm:mb-3">Our Guiding North Star</span>
         <h2 class="headline-lg text-white">
           Principles that guide our work.
         </h2>
-        <p class="body-md text-[#D7DEFF] font-light mt-3">
+        <p class="body-md text-[#D7DEFF] font-light mt-2 sm:mt-3">
           We don't believe in vanity numbers, fake results, or meaningless marketing claims.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-        <div class="card-dark p-7 space-y-3 reveal">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal">
           <span class="overline text-[#A9DDE0] block">01 // PHILOSOPHY</span>
           <h3 class="headline-sm text-white font-medium">Local &gt; Generic</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -226,7 +226,7 @@
           </p>
         </div>
 
-        <div class="card-dark p-7 space-y-3 reveal reveal-delay-1">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal reveal-delay-1">
           <span class="overline text-[#A9DDE0] block">02 // ALIGNMENT</span>
           <h3 class="headline-sm text-white font-medium">Relevance &gt; Reach</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -234,7 +234,7 @@
           </p>
         </div>
 
-        <div class="card-dark p-7 space-y-3 reveal reveal-delay-2">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal reveal-delay-2">
           <span class="overline text-[#A9DDE0] block">03 // PLANNING</span>
           <h3 class="headline-sm text-white font-medium">Strategy &gt; Followers</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -243,7 +243,7 @@
           </p>
         </div>
 
-        <div class="card-dark p-7 space-y-3 reveal">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal">
           <span class="overline text-[#A9DDE0] block">04 // INTEGRITY</span>
           <h3 class="headline-sm text-white font-medium">Trust &gt; Promotion</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -252,7 +252,7 @@
           </p>
         </div>
 
-        <div class="card-dark p-7 space-y-3 reveal reveal-delay-1">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal reveal-delay-1">
           <span class="overline text-[#A9DDE0] block">05 // IMPACT</span>
           <h3 class="headline-sm text-white font-medium">Attention &gt; Noise</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -261,7 +261,7 @@
           </p>
         </div>
 
-        <div class="card-dark p-7 space-y-3 reveal reveal-delay-2">
+        <div class="card-dark p-6 sm:p-7 space-y-2.5 sm:space-y-3 reveal reveal-delay-2">
           <span class="overline text-[#A9DDE0] block">06 // RELATIONSHIPS</span>
           <h3 class="headline-sm text-white font-medium">Long-Term &gt; One-Off</h3>
           <p class="body-sm text-[#D7DEFF] font-light leading-relaxed">
@@ -276,8 +276,8 @@
     <!-- =========================================
          SECTION 4: FINAL CTA (ELECTRIC BLUE #1866FE PANEL)
          ========================================= -->
-    <section class="hero-surface-blue py-16 md:py-24 px-6 sm:px-10 md:px-16 text-center">
-      <div class="max-w-3xl mx-auto space-y-7 relative z-10 reveal">
+    <section class="hero-surface-blue py-12 sm:py-16 md:py-24 px-5 sm:px-10 md:px-16 text-center">
+      <div class="max-w-3xl mx-auto space-y-5 sm:space-y-7 relative z-10 reveal">
         <h2 class="headline-display text-white">
           Your business is local. Your marketing should be too.
         </h2>
@@ -287,8 +287,8 @@
           you.
         </p>
 
-        <div class="pt-3 flex justify-center">
-          <button data-open-modal="consultation-modal" class="btn-pill-primary bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white">
+        <div class="pt-2 sm:pt-3 flex justify-center w-full max-w-xs mx-auto sm:max-w-none">
+          <button data-open-modal="consultation-modal" class="btn-pill-primary w-full sm:w-auto bg-white text-[#1866FE] hover:bg-[#D7DEFF] hover:text-[#0B2DFF] border-white justify-center">
             Plan My Launch
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
@@ -300,11 +300,11 @@
          FOOTER (NEUTRAL DARK #333333)
          ========================================= -->
     <footer class="footer-neutral">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
 
-        <div class="md:col-span-4 space-y-5">
+        <div class="md:col-span-4 space-y-4 sm:space-y-5">
           <div class="flex items-center">
-            <img src="assets/new-logo.png" alt="Huttingdon" class="h-8 w-auto object-contain" />
+            <img src="assets/new-logo.png" alt="Huttingdon" class="h-7 sm:h-8 w-auto object-contain" />
           </div>
           <p class="body-sm text-[#D7DEFF] max-w-sm font-light leading-relaxed">
             Huttingdon is a regional creator marketing agency connecting local businesses with creators who have genuine
@@ -315,26 +315,26 @@
           </div>
         </div>
 
-        <div class="md:col-span-2 space-y-4">
+        <div class="md:col-span-2 space-y-3 sm:space-y-4">
           <h5 class="overline text-white">Navigation</h5>
           <ul class="space-y-2.5 body-sm">
-            <li><a href="index.html" class="text-[#D7DEFF] hover:text-white transition-colors">Home</a></li>
-            <li><a href="creators.html" class="text-[#D7DEFF] hover:text-white transition-colors">For Creators</a></li>
-            <li><a href="about.html" class="text-white hover:text-[#A9DDE0] transition-colors">About Us</a></li>
-            <li><a href="contact.html" class="text-[#D7DEFF] hover:text-white transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-[#D7DEFF] hover:text-white transition-colors py-0.5 inline-block">Home</a></li>
+            <li><a href="creators.html" class="text-[#D7DEFF] hover:text-white transition-colors py-0.5 inline-block">For Creators</a></li>
+            <li><a href="about.html" class="text-white hover:text-[#A9DDE0] transition-colors py-0.5 inline-block">About Us</a></li>
+            <li><a href="contact.html" class="text-[#D7DEFF] hover:text-white transition-colors py-0.5 inline-block">Contact</a></li>
           </ul>
         </div>
 
-        <div class="md:col-span-3 space-y-4">
+        <div class="md:col-span-3 space-y-3 sm:space-y-4">
           <h5 class="overline text-white">Contact &amp; Inquiries</h5>
           <ul class="space-y-3 body-sm">
             <li>
               <span class="label-sm text-[#A9DDE0] block">Campaign Strategy</span>
-              <a href="mailto:influence@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors">influence@huttingdon.com</a>
+              <a href="mailto:influence@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors break-all">influence@huttingdon.com</a>
             </li>
             <li>
               <span class="label-sm text-[#A9DDE0] block">Creator Partnerships</span>
-              <a href="mailto:creators@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors">creators@huttingdon.com</a>
+              <a href="mailto:creators@huttingdon.com" class="text-[#D7DEFF] hover:text-white transition-colors break-all">creators@huttingdon.com</a>
             </li>
             <li class="pt-1">
               <span class="label-sm text-[#A9DDE0] block">For More Details</span>
@@ -343,14 +343,15 @@
           </ul>
         </div>
 
-        <div class="md:col-span-3 space-y-4">
+        <div class="md:col-span-3 space-y-3 sm:space-y-4">
           <h5 class="overline text-white">The Local Dispatch</h5>
           <p class="body-sm text-[#D7DEFF] leading-relaxed">
             Insights on regional marketing, creator discovery, and neighbourhood launch strategies.
           </p>
-          <form class="newsletter-form flex gap-2">
-            <input required class="input-curvy-dark" placeholder="your@business.com" type="email" />
-            <button type="submit" class="btn-pill-primary btn-pill-sm px-4" aria-label="Subscribe">
+          <form class="newsletter-form flex flex-col sm:flex-row gap-2">
+            <input required class="input-curvy-dark w-full" placeholder="your@business.com" type="email" />
+            <button type="submit" class="btn-pill-primary w-full sm:w-auto px-4 justify-center" aria-label="Subscribe">
+              <span class="sm:hidden text-xs font-semibold mr-1">Subscribe</span>
               <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
           </form>
@@ -358,9 +359,9 @@
 
       </div>
 
-      <div class="mt-12 pt-8 border-t border-[#374151] flex flex-col md:flex-row justify-between items-center body-sm text-[#9CA3AF]">
+      <div class="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-[#374151] flex flex-col sm:flex-row justify-between items-center body-sm text-[#9CA3AF] gap-3">
         <p>© 2026 Huttingdon. All rights reserved.</p>
-        <p class="mt-3 md:mt-0 font-light">Regional Creator Marketing</p>
+        <p class="font-light">Regional Creator Marketing</p>
       </div>
     </footer>
 
@@ -368,18 +369,18 @@
 
   <!-- Modal: Plan My Launch / Consultation -->
   <div id="consultation-modal" class="modal-overlay">
-    <div class="modal-container p-8 md:p-10">
-      <div class="flex justify-between items-start mb-6 border-b border-[#374151] pb-4">
+    <div class="modal-container p-5 sm:p-8 md:p-10">
+      <div class="flex justify-between items-start mb-5 border-b border-[#374151] pb-3 sm:pb-4">
         <div>
           <span class="overline text-[#A9DDE0] block">Regional Creator Marketing</span>
           <h3 class="headline-md text-white mt-1">Plan Your Launch</h3>
         </div>
-        <button data-close-modal class="text-[#9CA3AF] hover:text-white p-1" aria-label="Close Dialog">
+        <button data-close-modal class="text-[#9CA3AF] hover:text-white p-2 -mr-1 rounded-full hover:bg-white/10" aria-label="Close Dialog">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
-      <form id="consultation-form" class="space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <form id="consultation-form" class="space-y-3.5 sm:space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div>
             <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Your Name *</label>
             <input required type="text" class="input-curvy-dark" placeholder="Alex Morgan" />
@@ -389,7 +390,7 @@
             <input required type="email" class="input-curvy-dark" placeholder="alex@mybusiness.com" />
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div>
             <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">Business / Brand Name *</label>
             <input required type="text" class="input-curvy-dark" placeholder="e.g. Copper Hearth Bakery" />
@@ -407,7 +408,7 @@
             </select>
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div>
             <label class="label-sm text-[#D7DEFF] block mb-1.5 font-medium">City &amp; Neighbourhood / Area *</label>
             <input required type="text" class="input-curvy-dark" placeholder="e.g. Indiranagar, Bangalore" />
@@ -428,9 +429,9 @@
           <textarea rows="3" class="input-curvy-dark"
             placeholder="When are you launching, who are you hoping to reach, and what makes your business special?"></textarea>
         </div>
-        <div class="pt-3 flex justify-end gap-3">
-          <button type="button" data-close-modal class="btn-pill-secondary btn-pill-sm">Cancel</button>
-          <button type="submit" class="btn-pill-primary btn-pill-sm">Plan My Launch</button>
+        <div class="pt-3 flex flex-col-reverse sm:flex-row justify-end gap-2.5 sm:gap-3">
+          <button type="button" data-close-modal class="btn-pill-secondary btn-pill-sm w-full sm:w-auto justify-center">Cancel</button>
+          <button type="submit" class="btn-pill-primary btn-pill-sm w-full sm:w-auto justify-center">Plan My Launch</button>
         </div>
       </form>
     </div>

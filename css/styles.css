@@ -56,15 +56,23 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+  }
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -73,6 +81,8 @@ html {
   font-family: var(--font-body);
   overflow-y: auto;
   overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -88,7 +98,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -118,7 +128,7 @@ body {
 }
 
 /* =========================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR (TOUCH-DISABLED)
    ========================================= */
 .cursor-dot {
   width: 7px;
@@ -159,7 +169,7 @@ body {
   border-color: var(--color-primary);
 }
 
-@media (pointer: coarse) {
+@media (pointer: coarse), (max-width: 1024px) {
   .cursor-dot,
   .cursor-follower {
     display: none !important;
@@ -167,7 +177,7 @@ body {
 }
 
 /* =========================================
-   TYPOGRAPHY UTILITIES
+   FLUID RESPONSIVE TYPOGRAPHY
    ========================================= */
 .font-display {
   font-family: var(--font-display) !important;
@@ -179,23 +189,23 @@ body {
 
 .headline-display {
   font-family: var(--font-display);
-  font-size: clamp(32px, 5.2vw, 48px);
+  font-size: clamp(26px, 6vw, 48px);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.02em;
 }
 
 .headline-lg {
   font-family: var(--font-display);
-  font-size: clamp(26px, 4vw, 38px);
+  font-size: clamp(22px, 4.8vw, 38px);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.019em;
 }
 
 .headline-md {
   font-family: var(--font-display);
-  font-size: clamp(20px, 3vw, 29px);
+  font-size: clamp(18px, 3.8vw, 29px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -203,68 +213,80 @@ body {
 
 .headline-sm {
   font-family: var(--font-body);
-  font-size: 23px;
+  font-size: clamp(16px, 3.2vw, 23px);
   font-weight: 400;
-  line-height: 28.8px;
+  line-height: 1.35;
   letter-spacing: -0.02em;
 }
 
 .body-lg {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: clamp(15px, 2.5vw, 18px);
   font-weight: 400;
-  line-height: 25.2px;
-  letter-spacing: -0.02em;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
 }
 
 .body-md {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0em;
 }
 
 .body-sm {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.45;
   letter-spacing: 0em;
 }
 
 .label-lg {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 25.2px;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
 }
 
 .label-md {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.4;
   letter-spacing: 0em;
 }
 
 .label-sm {
   font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .overline {
   font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .body-sm {
+    font-size: 14px;
+  }
+  .label-sm {
+    font-size: 12px;
+  }
+  .overline {
+    font-size: 12px;
+  }
 }
 
 /* =========================================
@@ -274,10 +296,16 @@ body {
 .site-wrapper {
   background-color: var(--color-secondary);
   min-height: 100vh;
-  padding: 16px 16px 32px 16px;
+  padding: 12px 10px 24px 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .site-wrapper {
+    padding: 16px 16px 32px 16px;
+  }
+}
+
+@media (min-width: 1024px) {
   .site-wrapper {
     padding: 24px 32px 48px 32px;
   }
@@ -294,12 +322,19 @@ body {
    ========================================= */
 .navbar-frosted-container {
   position: sticky;
-  top: 16px;
+  top: 10px;
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding: 0 16px;
+  padding: 0 10px;
   pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .navbar-frosted-container {
+    top: 16px;
+    padding: 0 16px;
+  }
 }
 
 .navbar-frosted {
@@ -309,12 +344,18 @@ body {
   background: var(--color-neutral);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: 12px 24px;
+  padding: 10px 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .navbar-frosted {
+    padding: 12px 24px;
+  }
 }
 
 .nav-link {
@@ -345,7 +386,7 @@ body {
     opacity: 0.95;
   }
   50% {
-    transform: translateY(-1.5px) scale(1.02);
+    transform: translateY(-1px) scale(1.02);
     opacity: 1;
   }
 }
@@ -508,7 +549,7 @@ body {
 
 /* =========================================
    BUTTONS (INFLUENTIAL SPEC)
-   Pill-shaped, 59px height, clean 1px border
+   Pill-shaped, touch-friendly, clean 1px border
    ========================================= */
 
 /* Primary Button */
@@ -517,13 +558,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 59px;
-  padding: 0 32px;
+  gap: 8px;
+  min-height: 50px;
+  padding: 12px 24px;
   background-color: var(--color-primary);
   color: var(--color-on-surface);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   letter-spacing: 0.01em;
   border-radius: var(--radius-full);
@@ -532,7 +573,17 @@ body {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   box-shadow: none;
-  white-space: nowrap;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .btn-pill-primary,
+  .btn-pill-dark {
+    min-height: 59px;
+    padding: 0 32px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
 }
 
 .btn-pill-primary:hover,
@@ -543,19 +594,19 @@ body {
   transform: translateY(-2px);
 }
 
-/* Secondary Outlined Button (Transparent fill, 1px border) */
+/* Secondary Outlined Button */
 .btn-pill-secondary,
 .btn-pill-glass {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 59px;
-  padding: 0 32px;
+  gap: 8px;
+  min-height: 50px;
+  padding: 12px 24px;
   background-color: transparent;
   color: var(--color-on-surface);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   letter-spacing: 0.01em;
   border-radius: var(--radius-full);
@@ -563,7 +614,17 @@ body {
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  white-space: nowrap;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .btn-pill-secondary,
+  .btn-pill-glass {
+    min-height: 59px;
+    padding: 0 32px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
 }
 
 .btn-pill-secondary:hover,
@@ -574,25 +635,34 @@ body {
   transform: translateY(-2px);
 }
 
-/* Light Surface Action Button (for light containers) */
+/* Light Surface Action Button */
 .btn-pill-light {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 59px;
-  padding: 0 32px;
+  gap: 8px;
+  min-height: 50px;
+  padding: 12px 24px;
   background-color: var(--color-neutral);
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   border-radius: var(--radius-full);
   border: 1px solid var(--color-neutral);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  white-space: nowrap;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .btn-pill-light {
+    min-height: 59px;
+    padding: 0 32px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
 }
 
 .btn-pill-light:hover {
@@ -609,7 +679,7 @@ body {
   padding: 0;
   color: inherit;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   text-decoration: underline;
   cursor: pointer;
   transition: opacity 0.2s ease;
@@ -621,9 +691,19 @@ body {
 
 /* Small pill modifiers */
 .btn-pill-sm {
-  height: 42px !important;
-  padding: 0 20px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  padding: 0 18px !important;
   font-size: 13px !important;
+}
+
+@media (min-width: 768px) {
+  .btn-pill-sm {
+    min-height: 42px !important;
+    height: 42px !important;
+    padding: 0 20px !important;
+    font-size: 13px !important;
+  }
 }
 
 /* =========================================
@@ -637,9 +717,17 @@ body {
   color: var(--color-on-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .card,
+  .card-dark,
+  .floating-stack-dark {
+    padding: 24px;
+  }
 }
 
 .card:hover,
@@ -655,9 +743,16 @@ body {
   color: var(--color-neutral);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .card-light,
+  .floating-stack-light {
+    padding: 24px;
+  }
 }
 
 .card-light:hover,
@@ -671,13 +766,13 @@ body {
 .card-dark.buzz-card-active {
   border-color: var(--color-primary) !important;
   background-color: #262626 !important;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 0 0 1px var(--color-primary);
 }
 
 /* =========================================
    INPUTS & FORMS (INFLUENTIAL SPEC)
-   Pill-shaped, #FFFFFF fill, #333333 text, 16px 20px padding
+   Pill-shaped, #FFFFFF fill, #333333 text, responsive padding
    ========================================= */
 .input-curvy-dark,
 .input-curvy-light,
@@ -686,12 +781,21 @@ body {
   background-color: var(--color-surface);
   color: var(--color-neutral);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 15px;
   border-radius: var(--radius-full);
-  padding: 16px 20px;
+  padding: 14px 18px;
   border: 1px solid rgba(55, 65, 81, 0.25);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .input-curvy-dark,
+  .input-curvy-light,
+  .input-field {
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
 }
 
 .input-curvy-dark:focus,
@@ -711,7 +815,15 @@ textarea.input-curvy-dark,
 textarea.input-curvy-light,
 textarea.input-field {
   border-radius: var(--radius-lg);
-  padding: 16px 20px;
+  padding: 14px 18px;
+}
+
+@media (min-width: 768px) {
+  textarea.input-curvy-dark,
+  textarea.input-curvy-light,
+  textarea.input-field {
+    padding: 16px 20px;
+  }
 }
 
 select.input-curvy-dark,
@@ -741,14 +853,23 @@ select.input-curvy-light option {
   background-color: transparent;
   color: inherit;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: var(--radius-full);
   border: 1px solid var(--color-border);
-  padding: 8px 14px;
+  padding: 7px 14px;
+}
+
+@media (min-width: 768px) {
+  .chip,
+  .pill-dark,
+  .pill-light {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
 }
 
 .chip-primary {
@@ -789,7 +910,7 @@ select.input-curvy-light option {
    ========================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
@@ -814,6 +935,7 @@ select.input-curvy-light option {
 
 /* =========================================
    MOMENTS BUZZ SHOWCASE & MORPHING BLOB
+   Responsive scaling on all screens
    ========================================= */
 .buzz-blob-showcase {
   position: relative;
@@ -822,14 +944,22 @@ select.input-curvy-light option {
 
 .buzz-showcase-box {
   position: relative;
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   height: 380px;
   margin: 0 auto;
 }
 
+@media (max-width: 380px) {
+  .buzz-showcase-box {
+    max-width: 240px;
+    height: 325px;
+  }
+}
+
 .buzz-blob-container {
-  width: 280px;
-  height: 380px;
+  width: 100%;
+  height: 100%;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   border: 2px solid transparent;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
@@ -906,8 +1036,8 @@ select.input-curvy-light option {
   position: absolute;
   top: 0;
   left: 0;
-  width: 280px;
-  height: 380px;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 30;
   transition: opacity 0.6s ease;
@@ -919,12 +1049,12 @@ select.input-curvy-light option {
 
 .buzz-blob-badge {
   position: absolute;
-  bottom: 22px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 48px);
+  width: calc(100% - 36px);
   max-width: 210px;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: var(--radius-full);
   background: var(--color-neutral);
   border: 1px solid var(--color-border);
@@ -974,7 +1104,7 @@ select.input-curvy-light option {
 
 /* =========================================
    MODALS (INFLUENTIAL SPEC)
-   #333333 neutral container, 1px slate border, #FFFFFF inputs
+   Responsive padding, scrollable, touch-friendly
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -986,10 +1116,16 @@ select.input-curvy-light option {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 12px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    padding: 20px;
+  }
 }
 
 .modal-overlay.active {
@@ -1004,13 +1140,20 @@ select.input-curvy-light option {
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 620px;
-  max-height: 90vh;
+  max-height: 92vh;
   overflow-y: auto;
   position: relative;
   transform: scale(0.96) translateY(12px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
   color: var(--color-on-surface);
+  padding: 22px 18px;
+}
+
+@media (min-width: 640px) {
+  .modal-container {
+    padding: 32px 40px;
+  }
 }
 
 .modal-overlay.active .modal-container {
@@ -1022,20 +1165,31 @@ select.input-curvy-light option {
    ========================================= */
 #toast-container {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
   z-index: 99999;
   display: flex;
   flex-direction: column;
   gap: 10px;
   pointer-events: none;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  #toast-container {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    align-items: flex-end;
+  }
 }
 
 .toast {
   pointer-events: auto;
-  min-width: 300px;
-  max-width: 400px;
-  padding: 16px 20px;
+  width: 100%;
+  max-width: 380px;
+  padding: 14px 18px;
   background: var(--color-neutral);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -1056,6 +1210,7 @@ select.input-curvy-light option {
 
 /* =========================================
    MOBILE NAVIGATION DRAWER
+   Smooth slide-in, safe-area aware
    ========================================= */
 .mobile-nav-overlay {
   position: fixed;
@@ -1065,7 +1220,9 @@ select.input-curvy-light option {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 24px;
+  padding: 24px 20px;
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
   transform: translateY(-100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
   visibility: hidden;
@@ -1087,7 +1244,7 @@ select.input-curvy-light option {
   color: var(--color-on-surface);
   border-radius: var(--radius-2xl);
   border: 1px solid var(--color-border);
-  padding: 64px 32px 32px 32px;
+  padding: 48px 20px 28px 20px;
 }
 
 @media (min-width: 768px) {
